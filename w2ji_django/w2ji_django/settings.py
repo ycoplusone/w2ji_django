@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'account',  # account 로그인 앱 등록
+    'system_user',  # 사용자관리 시스템 개발.
     
 ]
 

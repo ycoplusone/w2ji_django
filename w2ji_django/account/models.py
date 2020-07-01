@@ -13,7 +13,6 @@ class Account(models.Model):
     access_dt = models.DateTimeField( auto_now_add=True, blank=True) # 마지막 접속일자
     create_dt = models.DateTimeField( auto_now_add = True) # 생성일 : 레코드 생성시 자동 생성
     update_dt = models.DateTimeField( auto_now = True) # 수정일 : 레코드 수정시 
-    
     # db 테이블 이름을 정할수 있다.
     class Meta:
         db_table ='accounts'

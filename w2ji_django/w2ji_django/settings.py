@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'vkmrmmqzo^5$#zfry5vbn+u6*l7$)cllp-5d+%bp#-9l@@iy-$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True # 테스트 일경우 true , 실서버 배포시 false
 
 ALLOWED_HOSTS = []
 
@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'a01.apps.A01Config',  # 테스트 앱
+    
     'django.contrib.admin', # 관리자용 사이트
     'django.contrib.auth', # 인증 시스템
     'django.contrib.contenttypes', # 컨텐츠 타입을 위한 프레임워크
@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles', # 정적 파일 관리 프레임워크
     'account',  # account 로그인 앱 등록
     'system_user',  # 사용자관리 시스템 개발.
+    
+    'blog',
     
     
 ]
@@ -120,7 +122,8 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-LANGUAGE_CODE = 'ko-kr'
+#LANGUAGE_CODE = 'ko'
+LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'Asia/Seoul'
 
@@ -135,3 +138,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR , 'static') # static 파일을 사용하기 위해서 추가 2020.07.08

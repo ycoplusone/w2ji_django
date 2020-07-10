@@ -138,4 +138,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR , 'static') # static 파일을 사용하기 위해서 추가 2020.07.08
+STATIC_ROOT = {
+    os.path.join(BASE_DIR , 'static') , 
+    '/blog/static/' , 
+    } # static 파일을 사용하기 위해서 추가 2020.07.08

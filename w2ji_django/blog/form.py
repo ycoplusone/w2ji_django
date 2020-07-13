@@ -9,4 +9,4 @@ class PostCreateForm(forms.ModelForm):
     # 이 폼에서 다룰 내용을 기술한다.
     class Meta:
         model = Post
-        fields = ('title','content')
+        fields = ('content' , 'title')

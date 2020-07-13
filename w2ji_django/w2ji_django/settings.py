@@ -61,7 +61,7 @@ ROOT_URLCONF = 'w2ji_django.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR , "templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -73,6 +73,8 @@ TEMPLATES = [
         },
     },
 ]
+
+
 
 WSGI_APPLICATION = 'w2ji_django.wsgi.application'
 
@@ -122,8 +124,8 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-#LANGUAGE_CODE = 'ko'
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ko'
+#LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'Asia/Seoul'
 
@@ -138,7 +140,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = {
-    os.path.join(BASE_DIR , 'static') , 
-    '/blog/static/' , 
-    } # static 파일을 사용하기 위해서 추가 2020.07.08
+STATICFILES_DIRS = [os.path.join(BASE_DIR , 'static')]

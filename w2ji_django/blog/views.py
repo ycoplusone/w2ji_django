@@ -18,12 +18,16 @@ def post_detail(request , id):
 
 def post_create(request):
     if request.method == "POST":
+        print('request',request)
+        print('request.POST',request.POST)
         form = PostCreateForm(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
-            post.published_at = timezone.now()
+            post.published_at = timezone.now()            
             post.save()
+            
+            
             return redirect('post_detail', id=post.id)
     else:
         form = PostCreateForm()

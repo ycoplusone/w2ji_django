@@ -1,3 +1,4 @@
+'''
 from django.test import TestCase
 
 from blog.models import Post
@@ -43,3 +44,4 @@ post.delete()
 a = Post.objects.all()
 print(a)
 
+'''

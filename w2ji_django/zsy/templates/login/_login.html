@@ -1,15 +1,14 @@
 {% extends "_base.html" %}
-
 {% block content1 %}
 <div style="position:absolute; margin:0 0 0 50%; top:50%; left:50%;margin-left:-200px; margin-top:-200px" >
     <div class="easyui-panel" title="{{title}}" style="width:400px;">
-        <form method="POST" class="easyui-form" data-options="novalidate:true">
-        	<div align="center">        	
-	            {% csrf_token %}	            
-	            {{ form.as_p }}
+        <form method="GET" class="easyui-form" data-options="novalidate:true" action="{%url 'login'%}"  >
+        	{% csrf_token %}
+        	<div align="center">
+{{ form.as_p }}
             </div>
-			<div style="text-align:center;padding:0px">
-				<button class="easyui-linkbutton" iconCls="icon-man"   onclick="login()" >Login</button> 
+			<div style="text-align:center;padding:0px">				
+				<button class="easyui-linkbutton" iconCls="icon-man"   type="submit">Login</button> 
 				<button class="easyui-linkbutton" iconCls="icon-clear" type="reset">Reset</button>
 			</div>
 			<br>

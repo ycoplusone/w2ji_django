@@ -1,5 +1,5 @@
 from django.db import models
-
+'''
 class CompanyInfo(models.Model):
     company_id  = models.CharField( max_length =20 , verbose_name = '회사코드' , primary_key = True)
     company_nm  = models.CharField( max_length =40 , verbose_name = '회사명' ) 
@@ -32,4 +32,4 @@ class UserInfo(models.Model):
     class Meta:
         db_table = 'zsy_user_info' # 테이블 이름 지정
         unique_together = (('company_id', 'user_id'),) #기본키 설정
-    
+   ''' 

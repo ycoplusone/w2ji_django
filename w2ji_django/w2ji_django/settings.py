@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     #'system_user',  # 사용자관리 시스템 개발.
     
     #'blog',
-    'zsy' , #시스템관련 
+    #'zsy' , #시스템관련 
     'polls.apps.PollsConfig',
     'test_song.apps.TestSongConfig',
     

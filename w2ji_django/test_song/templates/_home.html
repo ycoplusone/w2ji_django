@@ -1,0 +1,16 @@
+{% extends "_base.html" %}
+{% block content %}
+<a href="new">새글</a>
+<br><br>
+{% for blog in blogs.all %}
+	<p>title : {{blog.title}}</p>
+	<p>pub_date : {{blog.pub_date}}</p>
+	<p>body : {{blog.body}}</p>
+	<p>summary : {{blog.summary}}</p>
+	<a href="{{blog.id}}">...more</a>
+	<p>-----------------------------------------------------</p>
+{% endfor%}
+
+{% endblock content %}
+
+

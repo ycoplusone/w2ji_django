@@ -3,7 +3,7 @@ from . import views
 
 
 urlpatterns = [
-    
+    path(''             , views.index       , name = 'index'   ), 
     path('signup/'      , views.signup      , name = 'signup'   ), #가입
     path('login/'       , views.login       , name = 'login'    ), #로그인
     path('logout/'      , views.logout      , name = 'logout'   ), #로그아웃

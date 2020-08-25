@@ -1,20 +1,48 @@
 from django.shortcuts import render , redirect
-import json
 from django.views import View
 from django.http import JsonResponse, HttpResponse, Http404
+from django.contrib.auth.models import User
+from django.contrib import auth
+from aiohttp.client import request
 
 #from .form import UserSignupForm , UserLoginFrom
 
 #from .models import UserInfo
 
-def signup():
-    return HttpResponse('signup')
+def index(request):
+    return HttpResponse('zsy index')
 
-def login():
-    return HttpResponse('login')
+def signup(request):
+    if request.method == 'POST':
+        if request.POST['password1'] == request.POST['password2']:
+            user = User.objects.create_user(username=request.POST['username'], password=request.POST['password1'])
+            auth.login(request, user)
+            return redirect('home')
+        return render(request , 'login/_signup.html')
+    
+    return render(request , 'login/_signup.html',)
 
-def logout():
-    return HttpResponse('logout')    
+
+def login(request):
+    print( request.method )
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        print('username : ',username,'password : ' , password)
+        user = auth.authenticate(request , username=username , password = password)        
+        if user is not None:
+            auth.login(request, user)
+            return redirect('home')
+        else:
+            return render(request , 'login/_login.html',{'error':'your username or password incorrect'})
+    else:
+        return render(request , 'login/_login.html') 
+    
+    
+
+def logout(request):
+    auth.logout(request)
+    return redirect('home')    
 
 '''
 class LoginView(View):

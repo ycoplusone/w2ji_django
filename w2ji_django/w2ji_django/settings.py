@@ -38,13 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions', # 세션 프레임워크
     'django.contrib.messages', # 메세징 프레임워크
     'django.contrib.staticfiles', # 정적 파일 관리 프레임워크
-    #'account',  # account 로그인 앱 등록
-    #'system_user',  # 사용자관리 시스템 개발.
     
-    #'blog',
-    #'zsy' , #시스템관련 
-    'polls.apps.PollsConfig',
-    'test_song.apps.TestSongConfig',
+    'test_song.apps.TestSongConfig', #테스트 객체
+    
+    'zsy' , #시스템관련 
+    
     
     
 ]

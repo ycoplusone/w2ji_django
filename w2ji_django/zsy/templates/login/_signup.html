@@ -1,13 +1,17 @@
 {% extends "_base.html" %}
-{% block content1 %}
-<div style="position:absolute; margin:0 0 0 50%; top:50%; left:50%;margin-left:-200px; margin-top:-200px" >
-    <div class="easyui-panel" title="Sign Up!" style="width:400px;">
-        <form method="POST" class="easyui-form" data-options="novalidate:true" action="{%url 'signup'%}"  >
-{% csrf_token %}        
-        	<div align="center">
 
-{{ form.as_p }}
-<p> <input type="password" name="user_ps2" class="easyui-textbox" autocomplete="off" label="비밀번호 확인" labelWidth="100" style="width: 280px;" required id="id_user_ps2"></p>
+{% block script %}
+{% endblock script %}
+
+{% block content %}
+<div style="position:absolute; margin:0 0 0 50%; top:50%; left:50%;margin-left:-200px; margin-top:-200px" >
+    <div class="easyui-panel" title="Sign Up" style="width:400px;">
+        <form method="POST" class="easyui-form" data-options="novalidate:true" action=""  >
+        	<div align="center">
+{% csrf_token %}
+<p> <input type="text" name="username" class="easyui-textbox" autocomplete="off" label="Username" labelWidth="150" style="width: 280px;" required ></p>
+<p> <input type="password" name="password1" class="easyui-textbox" autocomplete="off" label="Password" labelWidth="150" style="width: 280px;" required ></p>
+<p> <input type="password" name="password2" class="easyui-textbox" autocomplete="off" label="Confirm Password" labelWidth="150" style="width: 280px;" required ></p>
             </div>
 			<div style="text-align:center;padding:0px">				
 				<button class="easyui-linkbutton" iconCls="icon-man"   type="submit">Sign Up</button> 
@@ -17,6 +21,6 @@
         </form>
    </div>
 </div>
-{% endblock content1 %}
+{% endblock content %}
 
 

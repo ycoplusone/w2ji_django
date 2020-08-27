@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.urls import include , path 
-import test_song.views
+
+
 
 urlpatterns = [
     #path(''   , admin.site.urls    ) ,    # 기본 default 페이지는 둔다.
@@ -11,9 +12,9 @@ urlpatterns = [
     #path(''         , include('zsy.urls')   ) ,    # 기본 default 페이지는 둔다.
     
     #테스트 라인
-    path('test/'     , include('test_song.urls') , name='home' ) , 
+    path('test/'     , include('test_song.urls') , name='test' ) , 
     # 테스트 라인
-    path('zsy/'     , include('zsy.urls') ) ,
+    path('zsy/'     , include('zsy.urls') , name='zsy') ,
     
      
     

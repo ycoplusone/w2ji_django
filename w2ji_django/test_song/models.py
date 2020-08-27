@@ -8,4 +8,11 @@ class Blog(models.Model):
         return self.title
     def summary(self):
         return self.body[:30]
+
+class Post(models.Model):
+    title = models.CharField(max_length=100)
+    body = models.TextField()
+    photo = models.ImageField(blank=True , upload_to='image/')    
+    class Meta:
+        db_table = 'test_post' # 테이블 이름 지정
     

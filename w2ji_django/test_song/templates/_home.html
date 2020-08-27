@@ -1,15 +1,25 @@
 {% extends "_base.html" %}
 {% block content %}
-<a href="new">새글</a>
-<br><br>
-{% for blog in blogs.all %}
-	<p>title : {{blog.title}}</p>
-	<p>pub_date : {{blog.pub_date}}</p>
-	<p>body : {{blog.body}}</p>
-	<p>summary : {{blog.summary}}</p>
-	<a href="{{blog.id}}">...more</a>
-	<p>-----------------------------------------------------</p>
-{% endfor%}
+	<a href="new">새글</a>
+	<br><br>
+	{% for blog in posts %}
+		<p>title : {{blog.title}}</p>
+		<p>pub_date : {{blog.pub_date}}</p>
+		<p>body : {{blog.body}}</p>
+		<p>summary : {{blog.summary}}</p>
+		<a href="{% url 'test_song:detail' blog.id %}">...more</a>
+		<p>-----------------------------------------------------</p>
+	{% endfor%}
+	
+	{% if posts.has_previous %}
+	<a href="?page=1">맨앞</a>
+	<a href="?page={{posts.previous_page_number}}">이전</a>
+	{% endif %}
+	{{posts.number}}/{{posts.paginator.num_pages}}
+	{% if posts.has_next %}
+	<a href="?page={{posts.next_page_number}}">다음</a>
+	<a href="?page={{ posts.paginator.num_pages }}">마지막</a>
+	{% endif %}
 
 {% endblock content %}
 

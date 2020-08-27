@@ -4,9 +4,11 @@
 	<p>title : {{blog.title}}</p>
 	<p>pub_date : {{blog.pub_date}}</p>
 	<p>body : {{blog.body}}</p>
-	<p>summary : {{blog.summary}}</p>
-	
+	<p>summary : {{blog.summary}}</p>	
 	<p>-----------------------------------------------------</p>
+	<a href="{% url 'test_song:index' %}">돌아가기</a>
+	<a href="{% url 'test_song:delete' blog.id %}">삭제</a>
+	<a href="{% url 'test_song:edit' blog.id %}">수정</a>
 
 {% endblock content %}
 

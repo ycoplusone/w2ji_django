@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     
     'test_song.apps.TestSongConfig', #테스트 객체
     
-    'zsy' , #시스템관련 
+    'zsy.apps.ZsyConfig',  #시스템관련 
     
     
     
@@ -142,3 +142,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR , 'static')]
+
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = [os.path.join(BASE_DIR , 'media')]

@@ -1,5 +1,8 @@
 from django.contrib import admin
 from django.urls import include , path 
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 
 
@@ -16,11 +19,10 @@ urlpatterns = [
     # 테스트 라인
     path('zsy/'     , include('zsy.urls') , name='zsy') ,
     
-     
-    
-    
-    
-    
         
     
-]
+]+static(settings.MEDIA_URL , document_root=settings.MEDIA_ROOT)
+'''
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+'''   

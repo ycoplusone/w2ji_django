@@ -12,7 +12,7 @@ class Blog(models.Model):
 class Post(models.Model):
     title = models.CharField(max_length=100)
     body = models.TextField()
-    photo = models.FileField(blank=True , upload_to='images/')    
+    photo = models.FileField(blank=True , upload_to='images/%y%m%d/')    
     class Meta:
         db_table = 'test_post' # 테이블 이름 지정
     

@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+from django.conf.global_settings import AUTH_USER_MODEL
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -27,6 +28,8 @@ DEBUG = True # 테스트 일경우 true , 실서버 배포시 false
 
 ALLOWED_HOSTS = []
 
+#유저모델 확장 2020.9.4
+AUTH_USER_MODEL = 'zsy.UserModel'
 
 # Application definition
 
@@ -87,7 +90,7 @@ WSGI_APPLICATION = 'w2ji_django.wsgi.application'
 DATABASES = {
     'default' : {
         'ENGINE'  : 'django.db.backends.mysql'  , # 엔진 설정
-        'NAME'    : 'com_mall'                  , # db스키마      
+        'NAME'    : 'mobile'                    , # db스키마      
         'USER'    : 'com'                       , # db 계정            
         'PASSWORD': 'com01'                     , # db 비밀번호     
         'HOST'    : 'localhost'                 , # 서버 정보

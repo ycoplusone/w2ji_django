@@ -1,4 +1,57 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser,BaseUserManager,PermissionsMixin
+
+
+class UserManager(BaseUserManager):
+    use_in_migrations = True
+
+    def _create_user(self, email, password, **extra_fields):
+        if not email:
+            raise ValueError('The given email must be set')
+        email = self.normalize_email(email)
+        user = self.model(email=email, **extra_fields)
+        user.set_password(password)
+        user.save(using=self._db)
+        return user
+
+    def create_user(self, email, password=None, **extra_fields):
+        extra_fields.setdefault('is_staff', False)
+        extra_fields.setdefault('is_superuser', False)
+        return self._create_user(email, password, **extra_fields)
+
+    def create_superuser(self, email, password, **extra_fields):
+        extra_fields.setdefault('is_staff', True)
+        extra_fields.setdefault('is_superuser', True)
+
+        if extra_fields.get('is_staff') is not True:
+            raise ValueError('Superuser must have is_staff=True.')
+        if extra_fields.get('is_superuser') is not True:
+            raise ValueError('Superuser must have is_superuser=True.')
+
+        return self._create_user(email, password, **extra_fields)
+
+
+class UserModel(AbstractUser , PermissionsMixin):
+    ''' User 모델 확장 '''
+    email = models.EmailField(unique = True, verbose_name='이메일' , max_length=255)
+    username = models.CharField(max_length=20, verbose_name='이름')
+    date_joined = models.DateTimeField(auto_now_add=True, verbose_name='가입일')
+    is_active = models.BooleanField(default=True, verbose_name='활성화 여부')
+    is_admin = models.BooleanField(default=False, verbose_name='관리자 여부')
+    is_superuser = models.BooleanField(default=False, verbose_name='슈퍼 관리자. 관리자 여부')
+    
+    photo = models.FileField(blank=True , upload_to='zsy_user_info/%y%m%d/')
+      
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = []
+    objects = UserManager()    
+
+    class Meta:
+        db_table = 'zsy_user_info' # 테이블 이름 지정
+
+
+
+
 '''
 class CompanyInfo(models.Model):
     company_id  = models.CharField( max_length =20 , verbose_name = '회사코드' , primary_key = True)

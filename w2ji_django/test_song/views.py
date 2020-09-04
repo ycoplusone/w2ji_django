@@ -3,7 +3,7 @@ from aiohttp.client import request
 from .models import Blog
 from django.utils import timezone
 from django.core.paginator import Paginator
-from .form import BlogPost
+from .form import BlogPost1 , BlogPost2
 
 from django.contrib.auth.models import User
 from django.contrib import auth
@@ -25,30 +25,53 @@ def detail(request , blog_id):
 
 def new(request):
     if request.method == 'POST':
-        form = BlogPost(request.POST)
+        form = BlogPost1(request.POST)
         if form.is_valid():
-            post = form.save(commit=False)
-            post.pub_date = timezone.datetime.now()
-            post.save()
-            '''
+
             blog = Blog()
             blog.title = request.POST['title']
             blog.body = request.POST['body']
             blog.pub_date = timezone.datetime.now()
             blog.save()
-            '''
         return redirect('test_song:index')
     else :
-        form = BlogPost()
+        form = BlogPost1()
         return render(request , '_new.html' , {'form':form})
+
+
+def new2(request):
+    if request.method == 'POST':
+        form = BlogPost2(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.pub_date = timezone.datetime.now()
+            post.save()
+
+        return redirect('test_song:index')
+    else :
+        form = BlogPost2()
+        return render(request , '_new.html' , {'form':form})
+
 
 def delete(request ,blog_id ):
     blog = Blog.objects.get(id=blog_id)
     blog.delete()
     return redirect('test_song:index')
 
+
+def edit(request , blog_id):
+    blog = get_object_or_404(Blog , pk=blog_id)
+    print('blog : ',blog)
+    if request.method == "POST":
+        print()
+    else:
+        form = BlogPost1(instance=blog)
+        return render(request, '_edit.html',{'form':form})
+        
+        
+
 '''
-def edit(request, blog_id):
+def zzzz(request, blog_id):
     cat = Cat.objects.get(id=blog_id)
     # 글을 수정사항을 입력하고 제출을 눌렀을 때
     if request.method == "POST":

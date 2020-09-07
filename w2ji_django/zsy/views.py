@@ -1,27 +1,32 @@
 from django.shortcuts import render , redirect
 from django.views import View
 from django.http import JsonResponse, HttpResponse, Http404
-from django.contrib.auth.models import User
+#from django.contrib.auth.models import User
+from .models import UserModel
+
 from django.contrib import auth
 from aiohttp.client import request
+from django.contrib.auth.decorators import login_required
 
-#from .form import UserSignupForm , UserLoginFrom
+from .form import SignupForm , LoginForm
 
 #from .models import UserInfo
 
+@login_required
 def index(request):
-    return HttpResponse('zsy index')
+    return render(request , 'login/_index.html')
 
 def signup(request):
-    if request.method == 'POST':
-        if request.POST['password1'] == request.POST['password2']:
-            user = User.objects.create_user(username=request.POST['username'], password=request.POST['password1'])
+    form = SignupForm()
+    if request.method == 'POST':        
+        if request.POST['password1'] == request.POST['password2']:            
+            user = UserModel.objects.create_user(email=request.POST['email'], password=request.POST['password1'])
             auth.login(request, user)
             return redirect('zsy:index')
         else:
-            return render(request , 'login/_signup.html')
+            return render(request , 'login/_signup.html' , {'form':form})
     else:
-        return render(request , 'login/_signup.html',)
+        return render(request , 'login/_signup.html' , {'form':form})
 
 
 def login(request):

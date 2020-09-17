@@ -89,7 +89,13 @@ WSGI_APPLICATION = 'w2ji_django.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
-    'default' : {
+    
+    'default': {
+        'ENGINE'  : 'django.db.backends.sqlite3'            ,
+        'NAME'    : os.path.join(BASE_DIR, 'db.sqlite3')    ,
+    } ,
+    
+    'local_mysql' : {
         'ENGINE'  : 'django.db.backends.mysql'  , # 엔진 설정
         'NAME'    : 'mobile'                    , # db스키마      
         'USER'    : 'com'                       , # db 계정            
@@ -101,10 +107,7 @@ DATABASES = {
         }        
     } ,    
     
-    'sqllist': {
-        'ENGINE'  : 'django.db.backends.sqlite3'            ,
-        'NAME'    : os.path.join(BASE_DIR, 'db.sqlite3')    ,
-    }
+     
 }
 
 

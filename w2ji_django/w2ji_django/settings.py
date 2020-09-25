@@ -30,7 +30,7 @@ DEBUG = True # 테스트 일경우 true , 실서버 배포시 false
 ALLOWED_HOSTS = []
 
 #유저모델 확장 2020.9.4
-AUTH_USER_MODEL = 'zsy.UserModel'
+#AUTH_USER_MODEL = 'zsy.UserModel'
 
 # Application definition
 
@@ -46,7 +46,11 @@ INSTALLED_APPS = [
     
     'test_song.apps.TestSongConfig', #테스트 객체
     
-    'zsy.apps.ZsyConfig',  #시스템관련 
+     
+    
+    'catalog.apps.CatalogConfig' , # 테스트 과정 입니다.
+    
+    
     
     
     

@@ -16,7 +16,6 @@ from django.urls import reverse_lazy
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-print('BASE_DIR',BASE_DIR)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -43,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages', # 메세징 프레임워크
     'django.contrib.staticfiles', # 정적 파일 관리 프레임워크
     'test_song.apps.TestSongConfig', #테스트 객체    
-    'catalog.apps.CatalogConfig' , # 테스트 과정 입니다.
+    #'catalog.apps.CatalogConfig' , # 테스트 과정 입니다.
     
 ]
 

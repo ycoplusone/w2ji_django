@@ -42,17 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions', # 세션 프레임워크
     'django.contrib.messages', # 메세징 프레임워크
     'django.contrib.staticfiles', # 정적 파일 관리 프레임워크
-    
-    
-    'test_song.apps.TestSongConfig', #테스트 객체
-    
-     
-    
+    'test_song.apps.TestSongConfig', #테스트 객체    
     'catalog.apps.CatalogConfig' , # 테스트 과정 입니다.
-    
-    
-    
-    
     
 ]
 
@@ -99,11 +90,11 @@ DATABASES = {
         'NAME'    : os.path.join(BASE_DIR, 'db.sqlite3')    ,
     } ,
     
-    'local_mysql' : {
+    'mysql_w2ji' : {
         'ENGINE'  : 'django.db.backends.mysql'  , # 엔진 설정
-        'NAME'    : 'mobile'                    , # db스키마      
-        'USER'    : 'com'                       , # db 계정            
-        'PASSWORD': 'com01'                     , # db 비밀번호     
+        'NAME'    : 'w2ji_django'               , # db스키마      
+        'USER'    : 'w2ji_django'               , # db 계정            
+        'PASSWORD': 'w2ji_django'               , # db 비밀번호     
         'HOST'    : 'localhost'                 , # 서버 정보
         'PORT'    : '3306'                      , # 서버 포트
         'OPTIONS' : {

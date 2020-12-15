@@ -1,14 +1,10 @@
 from django.shortcuts import render , get_object_or_404, redirect
-from aiohttp.client import request
 from .models import Blog
 from django.utils import timezone
 from django.core.paginator import Paginator
 from .form import BlogPost1 , BlogPost2
 
-from django.contrib.auth.models import User
-from django.contrib import auth
 
-# Create your views here.
 
 def home(request):
     blog = Blog.objects

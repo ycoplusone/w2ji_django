@@ -35,14 +35,16 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     
-    'django.contrib.admin', # 관리자용 사이트
-    'django.contrib.auth', # 인증 시스템
-    'django.contrib.contenttypes', # 컨텐츠 타입을 위한 프레임워크
-    'django.contrib.sessions', # 세션 프레임워크
-    'django.contrib.messages', # 메세징 프레임워크
-    'django.contrib.staticfiles', # 정적 파일 관리 프레임워크
+    'django.contrib.admin',     # 관리자용 사이트
+    'django.contrib.auth',      # 인증 시스템
+    'django.contrib.contenttypes', # 다양한 종류의 모델 데이터를 관리할수 있게 도와주는 앱
+    'django.contrib.sessions',  # 클라이언트 정보를 세션에서 관리하도록 하는 프레임워크
+    'django.contrib.messages',  # 컨트롤러에서 발생한 정보를 뷰에서 쉽게 접근하도록 연결하는 프레임워크
+    'django.contrib.staticfiles', # HTML, CSS , JS 파일등의 정적파일들을 관리해주는 프레임워크
+    
     'test_song.apps.TestSongConfig', #테스트 객체    
-    #'catalog.apps.CatalogConfig' , # 테스트 과정 입니다.
+    
+    'w2ji_bbs.apps.W2JiBbsConfig',#게시판 앱 추가
     
 ]
 
@@ -138,7 +140,7 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = True #기본시간대(UTC)에 대해서 사용 유무를 선택함.
 
 
 # Static files (CSS, JavaScript, Images)

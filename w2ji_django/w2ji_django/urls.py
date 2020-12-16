@@ -5,15 +5,18 @@ from django.conf.urls.static import static
 
 #Add URL maps to redirect the base URL to our application
 from django.views.generic import RedirectView
+from w2ji_bbs.views import hello
 
 
 
 
 urlpatterns = [
     #path(''   , admin.site.urls    ) ,    # 기본 default 페이지는 둔다.
-    path('admin/'   , admin.site.urls),
-    
+    path('admin/'   , admin.site.urls),    
     path('test/'     , include('test_song.urls') , name='test' ) ,# 테스트 라인 
+    
+    path('hello/<to>'     , hello ) ,
+    
     
     #path('', RedirectView.as_view(url='/catalog/', permanent=True)), # '' 로 접슥할시 catalog/로 넘긴다.
     

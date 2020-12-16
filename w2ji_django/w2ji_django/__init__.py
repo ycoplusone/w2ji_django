@@ -6,6 +6,7 @@ a = bbs.objects.create(title='aaaa' , content='content 1111' , author='정몰?' 
 a.author
 
 
+
 왜 안되지?
 되겠지?
 '''

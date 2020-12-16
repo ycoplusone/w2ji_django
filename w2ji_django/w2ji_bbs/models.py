@@ -11,3 +11,6 @@ class bbs(models.Model):
     
     class Meta:
         db_table = 'w2ji_bbs' # 테이블 이름 지정
+    
+    def __str__(self):
+        return '[{}] {}'.format(self.id , self.title)

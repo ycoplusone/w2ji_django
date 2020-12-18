@@ -15,7 +15,8 @@ urlpatterns = [
     path('admin/'   , admin.site.urls),    
     path('test/'     , include('test_song.urls') , name='test' ) ,# 테스트 라인 
     
-    path('hello/<to>'     , hello ) ,
+    
+    path('w2ji_bbs/'     , include('w2ji_bbs.urls')  ) ,
     
     
     #path('', RedirectView.as_view(url='/catalog/', permanent=True)), # '' 로 접슥할시 catalog/로 넘긴다.

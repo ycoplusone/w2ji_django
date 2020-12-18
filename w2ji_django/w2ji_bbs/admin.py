@@ -2,11 +2,12 @@ from django.contrib import admin
 from .models import bbs
 
 
-@admin.site.register(bbs)
+admin.site.register(bbs)
+'''
 class bbsAdmin(admin.ModelAdmin):
-    list_display = ('id','title','content') #date_updated 아래 정의한 메소드
+    list_display = ('id','title','author') #date_updated 아래 정의한 메소드
     list_display_links = ('id','title') #상세페이지로 이동할수 있는 필드 리스트
-    '''
+    
     def date_updated(self , obj):
         return obj.update_dt.strftime("%Y-%m-%d")
 

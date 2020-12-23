@@ -13,36 +13,45 @@ from . import models
 def hello(request,to):
     return HttpResponse('hello world {}'.format(to))
 
-class list_bbs(TemplateView):  #목록보기
-    template_name = 'base.html'
-    queryset = models.bbs.objects.all() #모든 게시글을 가져온다.
+class bbs_list(TemplateView):  #목록보기
+    template_name = 'bbs_list.html' #뷰 전용 템플릿 생성
+    queryset = None #models.bbs.objects.all() #모든 게시글을 가져온다.
     
     def get(self, request, *args, **kwargs):
         ctx = { 
             'view' : self.__class__.__name__ , #클래스의 이름
-            'data' : self.queryset #걸색결과 
+            'lists' : self.get_queryset() ,    #self.queryset #걸색결과 
         }    #템플릿에 전달할 데이터
         return self.render_to_response(ctx)
+    
+    def get_queryset(self):
+        if not self.queryset:
+            self.queryset = models.bbs.objects.all()
+        return self.queryset
         
 
-class detail_bbs(TemplateView): #상세보기 , 글의 id 참조
-    template_name = 'base.html'
+class bbs_detail(TemplateView): #상세보기 , 글의 id 참조
+    template_name = 'bbs_detail.html'
     queryset = models.bbs.objects.all()
     pk_url_kwargs = 'bbs_id' #검색데이터의 primary key 를 전달 받을 이름
     
     def get_object(self , queryset=None):
         queryset = queryset or self.queryset #queryset 파라미터 초기화
         pk = self.kwargs.get(self.pk_url_kwargs) #pk는 모델에서 정의된pk값, 즉 모델의 id
-        return queryset.filter(pk=pk).first() #pk로 검색된 데이터가 있다면 그 중 첫번째 데이터 없다면 None 반환
+        bbs = queryset.filter(pk=pk).first()
+        if not bbs:
+            raise Http404('invalid pk')
+        return bbs #pk로 검색된 데이터가 있다면 그 중 첫번째 데이터 없다면 None 반환
     
     def get(self, request, *args, **kwargs):
         bbs = self.get_object()
+        '''
         if not bbs:
             raise Http404('invalid bbs_id') #검색된 데이터가 없다면 에러 발생
-        
+        '''
         ctx = {
             'view' : self.__class__.__name__ , 
-            'data' : bbs  
+            'detail' : bbs  
         }
         return self.render_to_response(ctx)
     

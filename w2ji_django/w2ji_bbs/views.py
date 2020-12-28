@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.http.response import HttpResponse, HttpResponseNotAllowed, Http404
+from django.http.response import HttpResponse, HttpResponseNotAllowed, Http404,HttpResponseRedirect
+from django.contrib import messages
 from django.views.generic import TemplateView
 from . import models
 
@@ -51,15 +52,27 @@ class bbs_detail(TemplateView): #상세보기 , 글의 id 참조
         '''
         ctx = {
             'view' : self.__class__.__name__ , 
-            'detail' : bbs  
+            'data' : bbs  
         }
+        return self.render_to_response(ctx)
+
+class bbs_create(TemplateView):
+    template_name = 'bbs_update.html'    
+    queryset = None #models.bbs.objects.all() #모든 게시글을 가져온다.
+    
+    def get(self, request, *args, **kwargs):
+        ctx = { 
+            'view' : self.__class__.__name__ , #클래스의 이름
+            'lists' : self.get_queryset() ,    #self.queryset #걸색결과 
+        }    #템플릿에 전달할 데이터
         return self.render_to_response(ctx)
     
 
-class cu_bbs(TemplateView): #생성및 수정, 수정시 글의 id 참조
-    template_name = 'base.html'
+class bbs_CreateUpdate(TemplateView): #생성및 수정, 수정시 글의 id 참조    
+    template_name = 'bbs_update.html'
     queryset = models.bbs.objects.all()
     pk_url_kwargs = 'bbs_id'
+    success_message = '게시글이 저장되었습니다.'
     
     def get_object(self, queryset=None):
         queryset = queryset or self.queryset
@@ -67,11 +80,13 @@ class cu_bbs(TemplateView): #생성및 수정, 수정시 글의 id 참조
         bbs = queryset.filter(pk=pk).first()
         
         if pk and not bbs: #결과가 없다면 바로 에러 발생
+            print('bbs_cu 오류 인가요?')
             raise Http404('invalid pk')
         return bbs
     
     
     def get(self, request, *args, **kwargs): #화면 요청
+        print('bbs_cu 오류 인가요? 여기에는 오냐?')
         bbs = self.get_object()
         ctx = {
             'view' : self.__class__.__name__ , 
@@ -84,25 +99,26 @@ class cu_bbs(TemplateView): #생성및 수정, 수정시 글의 id 참조
         post_data = {key:request.POST.get(key) for key in ('title','content','author')}
         for key in post_data:
             if not post_data[key]:
-                raise Http404('no data for {}'.format(key))
-        
-        if action == 'create': #action이 create일 경우
-            bbs = models.bbs.objects.create(title = post_data['title'] , content = post_data['content'] , author = post_data['author'])
-        elif action == 'update': # action이 update일 경우
-            bbs = self.get_object()
-            if not bbs:
-                raise Http404('invalid article_id')
+                messages.error(self.request, '{} 값이 존재하지 않습니다.'.format(key), extra_tags='danger') # error 레벨로 메시지 저장
             
-            for key , value in post_data.items():
-                setattr(bbs , key , value)
+        if len(messages.get_messages(request)) == 0:                  # 메시지가 있다면 아무것도 처리하지 않음
+            if action == 'create': #action이 create일 경우
+                bbs = models.bbs.objects.create(**post_data)
+                messages.success(self.request, self.success_message)  # success 레벨로 메시지 저장
+            elif action == 'update': # action이 update일 경우
+                bbs = self.get_object()                
+                for key , value in post_data.items():
+                    setattr(bbs , key , value)                
+                bbs.save()
+                messages.success(self.request, self.success_message)  # success 레벨로 메시지 저장
+            else:
+                messages.error(self.request, '알 수 없는 요청입니다.', extra_tags='danger')     # error 레벨로 메시지 저장
             
-            bbs.save()
-        else:
-            raise Http404('invalid action')
+            return HttpResponseRedirect('/w2ji_bbs/') # 정상적인 저장이 완료되면 '/articles/'로 이동됨
                 
         ctx = {
             'view' : self.__class__.__name__ , 
-            'data' : bbs 
+            'data' : self.get_object() if action == 'update' else None 
         }
         return self.render_to_response(ctx) 
 

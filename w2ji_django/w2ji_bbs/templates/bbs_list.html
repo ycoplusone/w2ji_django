@@ -1,0 +1,26 @@
+<!-- bbs/templates/bbs_list.html -->
+{% extends 'base.html' %}
+
+{% block title %}<title>게시글 목록</title>{% endblock title %}
+
+{% block css %}                                    <!-- bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+{% endblock css %}
+
+{% block content %}
+<table class="table table-hover table-responsive"> <!-- hover, responsive -->
+    <thead>
+        <th>게시글번호</th><th>제목</th><th>작성자</th>
+    </thead>
+    <tbody>
+    	{% for list in lists %} <!-- for tag 시작 -->
+        <tr onclick="location.href='/w2ji_bbs/detail/{{ list.pk }}/'">  <!-- 테이블 행 click 시 url 이동 -->
+            <td>{{list.pk}}</td><td>{{list.title}}</td><td>{{list.author}}</td>
+        </tr>
+        {% endfor %} <!-- for tag 종료 -->
+    </tbody>
+</table>
+
+<!-- 버튼 click 시 url 이동 -->
+<a href="/w2ji_bbs/create/"><button class="btn btn-primary" type="button">새 게시글 작성</button></a>
+{% endblock content %}

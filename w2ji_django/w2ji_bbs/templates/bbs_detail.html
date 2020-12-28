@@ -1,0 +1,37 @@
+<!-- bbs/templates/article_detail.html -->
+
+
+{% extends 'base.html' %}
+
+{% block title %}<title>게시글 상세 - {{ data.pk }}. {{ data.title }}</title>{% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+{% endblock css %}
+
+{% block content %}
+<table class="table table-striped table-bordered">
+	<tr>
+		<th>번호</th>
+		<td>{{ data.pk }}</td>
+	</tr>
+	<tr>
+		<th>제목</th>
+		<td>{{ data.title }}</td>
+	</tr>
+	<tr>
+		<th>내용</th>
+		<td>{{ data.content }}</td>
+	</tr>
+    <tr>
+		<th>작성자</th>
+		<td>{{ data.author }}</td>
+	</tr>
+    <tr>
+		<th>작성자</th>
+		<td>{{ data.created_at }}</td>
+	</tr>
+</table>
+
+<a href="/w2ji_bbs/update/{{ data.pk }}/"><button class="btn btn-primary" type="button">게시글 수정</button></a>
+{% endblock content %}

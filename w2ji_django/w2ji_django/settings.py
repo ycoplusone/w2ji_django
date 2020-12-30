@@ -27,33 +27,33 @@ SECRET_KEY = 'vkmrmmqzo^5$#zfry5vbn+u6*l7$)cllp-5d+%bp#-9l@@iy-$'
 DEBUG = True # 테스트 일경우 true , 실서버 배포시 false
 
 ALLOWED_HOSTS = []
-
-#유저모델 확장 2020.9.4
-#AUTH_USER_MODEL = 'zsy.UserModel'
+AUTH_USER_MODEL = 'w2ji_user.User' #앱label.모델명 2020.12.28 추가
+LOGIN_REDIRECT_URL = '/w2ji_bbs/'  # 로그인이 되면 /article/로 이동
+LOGIN_URL = '/w2ji_user/login/' #로그인 url
 
 # Application definition
-
 INSTALLED_APPS = [
     
-    'django.contrib.admin',     # 관리자용 사이트
-    'django.contrib.auth',      # 인증 시스템
-    'django.contrib.contenttypes', # 다양한 종류의 모델 데이터를 관리할수 있게 도와주는 앱
-    'django.contrib.sessions',  # 클라이언트 정보를 세션에서 관리하도록 하는 프레임워크
-    'django.contrib.messages',  # 컨트롤러에서 발생한 정보를 뷰에서 쉽게 접근하도록 연결하는 프레임워크
-    'django.contrib.staticfiles', # HTML, CSS , JS 파일등의 정적파일들을 관리해주는 프레임워크
+    'django.contrib.admin',             # 관리자용 사이트
+    'django.contrib.auth',              # 인증 시스템
+    'django.contrib.contenttypes',      # 다양한 종류의 모델 데이터를 관리할수 있게 도와주는 앱
+    'django.contrib.sessions',          # 클라이언트 정보를 세션에서 관리하도록 하는 프레임워크
+    'django.contrib.messages',          # 컨트롤러에서 발생한 정보를 뷰에서 쉽게 접근하도록 연결하는 프레임워크
+    'django.contrib.staticfiles',       # HTML, CSS , JS 파일등의 정적파일들을 관리해주는 프레임워크
     
     'test_song.apps.TestSongConfig', #테스트 객체    
     
     'w2ji_bbs.apps.W2JiBbsConfig',#게시판 앱 추가
+    'w2ji_user.apps.W2JiUserConfig',# 사용자인증
     
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware', #사용자인증 관한 처리 auth_login 통해 세션관리
+    'django.contrib.auth.middleware.AuthenticationMiddleware', #사용자인증 관한 처리 
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',    
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -131,7 +131,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-LANGUAGE_CODE = 'ko'
+LANGUAGE_CODE = 'ko-kr'
 #LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'Asia/Seoul'
@@ -153,6 +153,3 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR , 'static')]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR , 'media')
 
-
-#로그아웃이 이 설정에 따라서 이동한다.
-#LOGOUT_REDIRECT_URL = reverse_lazy('zsy:login')

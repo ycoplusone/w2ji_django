@@ -11,12 +11,15 @@ from w2ji_bbs.views import hello
 
 
 urlpatterns = [
+    path('test/'     , include('test_song.urls') , name='test' ) ,# 테스트 라인
     #path(''   , admin.site.urls    ) ,    # 기본 default 페이지는 둔다.
-    path('admin/'   , admin.site.urls),    
-    path('test/'     , include('test_song.urls') , name='test' ) ,# 테스트 라인 
+    path('admin/'   , admin.site.urls),
+        
+   
     
     
-    path('w2ji_bbs/'     , include('w2ji_bbs.urls')  ) ,
+    path('w2ji_bbs/'            , include('w2ji_bbs.urls')  ) , # 게시판 앱
+    path('w2ji_user/'           , include('w2ji_user.urls')  ) , # 사용자 
     
     
     #path('', RedirectView.as_view(url='/catalog/', permanent=True)), # '' 로 접슥할시 catalog/로 넘긴다.

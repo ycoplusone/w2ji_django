@@ -3,6 +3,8 @@ from django.http.response import HttpResponse, HttpResponseNotAllowed, Http404,H
 from django.contrib import messages
 from django.views.generic import TemplateView
 from . import models
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.conf import settings
 
 '''
     장고는 FBV와 CBV로 뷰를 개발할수 있다.
@@ -56,7 +58,8 @@ class bbs_detail(TemplateView): #상세보기 , 글의 id 참조
         }
         return self.render_to_response(ctx)
 
-class bbs_create(TemplateView):
+class bbs_create(LoginRequiredMixin , TemplateView):
+    login_url = settings.LOGIN_URL #설정값으로 설정
     template_name = 'bbs_update.html'    
     queryset = None #models.bbs.objects.all() #모든 게시글을 가져온다.
     

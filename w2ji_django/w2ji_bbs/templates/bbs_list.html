@@ -1,10 +1,13 @@
 <!-- bbs/templates/bbs_list.html -->
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %}<title>게시글 목록</title>{% endblock title %}
 
-{% block css %}                                    <!-- bootstrap CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+{% block css %}  
+{{ block.super }}
+<link rel="stylesheet" href="{% static '/css/bootstrap.min.css' %}">                                  
+<!-- bootstrap CSS -->
+<!-- link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"-->
 {% endblock css %}
 
 {% block content %}

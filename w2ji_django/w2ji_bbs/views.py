@@ -71,7 +71,8 @@ class bbs_create(LoginRequiredMixin , TemplateView):
         return self.render_to_response(ctx)
     
 
-class bbs_CreateUpdate(TemplateView): #생성및 수정, 수정시 글의 id 참조    
+class bbs_CreateUpdate(LoginRequiredMixin , TemplateView): #생성및 수정, 수정시 글의 id 참조    
+    login_url = settings.LOGIN_URL
     template_name = 'bbs_update.html'
     queryset = models.bbs.objects.all()
     pk_url_kwargs = 'bbs_id'
@@ -82,14 +83,13 @@ class bbs_CreateUpdate(TemplateView): #생성및 수정, 수정시 글의 id 참
         pk = self.kwargs.get(self.pk_url_kwargs)
         bbs = queryset.filter(pk=pk).first()
         
-        if pk and not bbs: #결과가 없다면 바로 에러 발생
-            print('bbs_cu 오류 인가요?')
+        if pk and not bbs: #결과가 없다면 바로 에러 발생            
             raise Http404('invalid pk')
         return bbs
     
     
     def get(self, request, *args, **kwargs): #화면 요청
-        print('bbs_cu 오류 인가요? 여기에는 오냐?')
+        ''''''
         bbs = self.get_object()
         ctx = {
             'view' : self.__class__.__name__ , 
@@ -99,11 +99,13 @@ class bbs_CreateUpdate(TemplateView): #생성및 수정, 수정시 글의 id 참
     
     def post(self, request, *args, **kwargs): #액션
         action  = request.POST.get('action') #request.POST 객체에서 데이터 얻기
-        post_data = {key:request.POST.get(key) for key in ('title','content','author')}
+        post_data = {key:request.POST.get(key) for key in ('title','content')}
         for key in post_data:
             if not post_data[key]:
                 messages.error(self.request, '{} 값이 존재하지 않습니다.'.format(key), extra_tags='danger') # error 레벨로 메시지 저장
-            
+        
+        post_data['author'] = self.request.user     
+        
         if len(messages.get_messages(request)) == 0:                  # 메시지가 있다면 아무것도 처리하지 않음
             if action == 'create': #action이 create일 경우
                 bbs = models.bbs.objects.create(**post_data)

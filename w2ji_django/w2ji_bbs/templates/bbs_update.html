@@ -2,7 +2,7 @@
 {% extends 'base.html' %}
 
 {% block title %}
-	<title>게시글 상세 - {{ article.pk }}. {{ article.title }}</title>
+	<title>게시글 수정 - {{ article.pk }}. {{ article.title }}</title>
 {% endblock title %}
 
 {% block css %}
@@ -37,13 +37,13 @@
 		<th>내용</th>                                     <!-- 내용 입력 -->
 		<td><textarea rows="10" class="form-control" name="content">{{ data.content }}</textarea></td>
 	</tr>
-    <tr>
-		<th>작성자</th>                                    <!-- 작성자 입력 -->
+    <!-- tr>
+		<th>작성자</th>
 		<td><input type="text" class="form-control" name="author" value="{{ data.author }}"></td>
-	</tr>
+	</tr-->
     <tr>
 		<th>작성일</th>
-		<td>{{ data.created_at | date:"Y-m-d H:i" }}</td>
+		<td>{{ data.create_dt | date:"Y-m-d H:i" }}</td>
 	</tr>
 </table>
 <button class="btn btn-primary" type="submit">게시글 저장</button>

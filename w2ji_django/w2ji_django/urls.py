@@ -16,7 +16,7 @@ urlpatterns = [
     path('admin/'   , admin.site.urls),
         
    
-    
+    path('w2ji_tiny/'           , include('w2ji_tinydash.urls')  ) , # tinydash UI 테스트  
     
     path('w2ji_bbs/'            , include('w2ji_bbs.urls')  ) , # 게시판 앱
     path('w2ji_user/'           , include('w2ji_user.urls')  ) , # 사용자 

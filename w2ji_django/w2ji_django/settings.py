@@ -30,6 +30,8 @@ ALLOWED_HOSTS = []
 AUTH_USER_MODEL = 'w2ji_user.User' #앱label.모델명 2020.12.28 추가
 LOGIN_REDIRECT_URL = '/w2ji_bbs/'  # 로그인이 되면 /article/로 이동
 LOGIN_URL = '/w2ji_user/login/' #로그인 url
+LOGOUT_REDIRECT_URL = '/w2ji_bbs/' #로그아웃 시 연결 url
+
 
 # Application definition
 INSTALLED_APPS = [

@@ -2,47 +2,26 @@
 <!doctype html>
 <html>
 	<head>
-	<title>{% block title %}{% endblock title %}</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="favicon.ico">
-    <!-- Simple bar CSS -->
-    <link rel="stylesheet" href="{% static '/w2ji_css/simplebar.css' %}">
-    <!-- Fonts CSS -->
-    <link href="{% static '/w2ji_fonts/googlefonts.css' %}" rel="stylesheet">
-    <!-- Icons CSS -->
-    <link rel="stylesheet" href="{% static '/w2ji_css/feather.css' %}">
-    <link rel="stylesheet" href="{% static '/w2ji_css/select2.css' %}">
-    <link rel="stylesheet" href="{% static '/w2ji_css/dropzone.css' %}">
-    <link rel="stylesheet" href="{% static '/w2ji_css/uppy.min.css' %}">
-    <link rel="stylesheet" href="{% static '/w2ji_css/jquery.steps.css' %}">
-    <link rel="stylesheet" href="{% static '/w2ji_css/jquery.timepicker.css' %}">
-    <link rel="stylesheet" href="{% static '/w2ji_css/quill.snow.css' %}">
-    <!-- Date Range Picker CSS -->
-    <link rel="stylesheet" href="{% static '/w2ji_css/daterangepicker.css' %}">
-    <!-- App CSS -->
-    <link rel="stylesheet" href="{% static '/w2ji_css/app-light.css' %}" id="lightTheme">
-    <link rel="stylesheet" href="{% static '/w2ji_css/app-dark.css' %}" id="darkTheme" disabled>	
-
-
+		<!-- 타이틀 공간 -->
+		{% block title %}
+		{% endblock title %}
 
 		<!-- 페이지별 메타 데이터 공간 -->
        	{% block meta %}
        	{% endblock meta %}
-		
-		<!-- 페이지별 스크립트 공간 -->
-       	{% block scripts %}
-       	{% endblock scripts %}
        	
        	<!-- 페이지별 css -->
        	{% block css %}
-       	{% endblock css %}
-       	
+       	{% endblock css %}       	
+		
+		<!-- 페이지별 스크립트 공간 -->
+       	{% block scripts %}
+       	{% endblock scripts %}       	
 </head>	
 
 {% block content %}
 {% endblock content %}
+
+
 
 </html>

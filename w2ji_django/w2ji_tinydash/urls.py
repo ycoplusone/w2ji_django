@@ -12,4 +12,15 @@ urlpatterns = [
     path('ui-modals/'                   , views.uimodals.as_view()   ) ,
     path('ui-tabs-accordion/'           , views.uitabsaccordion.as_view()   ) ,
     path('ui-progress/'                 , views.uiprogress.as_view()   ) ,
+    
+    path('widgets/'                     , views.widgets.as_view()   ) ,
+    
+    path('form_advanced/'                   , views.form_advanced.as_view()   ) ,
+    path('form_elements/'                   , views.form_elements.as_view()   ) ,
+    path('form_layouts/'                    , views.form_layouts.as_view()   ) ,
+    path('form_upload/'                     , views.form_upload.as_view()   ) ,
+    path('form_validation/'                 , views.form_validation.as_view()   ) ,
+    path('form_wizard/'                     , views.form_wizard.as_view()   ) ,
+    
+    
 ]

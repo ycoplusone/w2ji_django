@@ -36,4 +36,24 @@ class uitabsaccordion(TemplateView):
 
 class uiprogress(TemplateView):
     template_name = 'ui-progress.html' #뷰 전용 템플릿 생성
-        
+
+class widgets(TemplateView):
+    template_name = 'widgets.html' #뷰 전용 템플릿 생성        
+
+class form_advanced(TemplateView):
+    template_name = 'form_advanced.html' #뷰 전용 템플릿 생성
+    
+class form_elements(TemplateView):
+    template_name = 'form_elements.html' #뷰 전용 템플릿 생성
+    
+class form_layouts(TemplateView):
+    template_name = 'form_layouts.html' #뷰 전용 템플릿 생성        
+
+class form_upload(TemplateView):
+    template_name = 'form_upload.html' #뷰 전용 템플릿 생성
+    
+class form_validation(TemplateView):
+    template_name = 'form_validation.html' #뷰 전용 템플릿 생성
+    
+class form_wizard(TemplateView):
+    template_name = 'form_wizard.html' #뷰 전용 템플릿 생성

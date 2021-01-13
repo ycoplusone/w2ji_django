@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     
     'w2ji_bbs.apps.W2JiBbsConfig',#게시판 앱 추가
     'w2ji_user.apps.W2JiUserConfig',# 사용자인증
+    'w2ji_menu.apps.W2JiMenuConfig',# 메뉴
+    
     'w2ji_tinydash.apps.W2JiTinydashConfig',# tinydash Ui 테스트
     
 ]

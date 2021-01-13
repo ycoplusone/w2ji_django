@@ -5,7 +5,7 @@ from django.conf.urls.static import static
 
 #Add URL maps to redirect the base URL to our application
 from django.views.generic import RedirectView
-from w2ji_bbs.views import hello
+
 
 
 
@@ -19,7 +19,9 @@ urlpatterns = [
     path('w2ji_tiny/'           , include('w2ji_tinydash.urls')  ) , # tinydash UI 테스트  
     
     path('w2ji_bbs/'            , include('w2ji_bbs.urls')  ) , # 게시판 앱
-    path('w2ji_user/'           , include('w2ji_user.urls')  ) , # 사용자 
+    path('w2ji_user/'           , include('w2ji_user.urls')  ) , # 사용자
+    
+    path('w2ji_menu/'           , include('w2ji_menu.urls')  ) , # 메뉴 
     
     
     #path('', RedirectView.as_view(url='/catalog/', permanent=True)), # '' 로 접슥할시 catalog/로 넘긴다.

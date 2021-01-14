@@ -9,11 +9,11 @@ class group(models.Model):
         db_table = 'w2ji_menu_group' # 테이블 이름 지정
     
     def __str__(self):
-        return '{}[{}]'.format( self.group_nm ,self.group_sort )
+        return '{}'.format( self.group_nm  )
 
 class menu(models.Model):
     
-    group = models.ForeignKey('w2ji_menu.group' , on_delete=models.CASCADE )
+    group = models.ForeignKey('w2ji_menu.group' , on_delete=models.CASCADE , null=True )
     #author = models.ForeignKey('w2ji_user.User' , related_name='bbs', on_delete=models.CASCADE)
     menu_nm  = models.CharField('메뉴명' , max_length = 126 , null = False)
     menu_url = models.CharField('메뉴 링크' , max_length = 256 , null = False)    

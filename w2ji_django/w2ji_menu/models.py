@@ -1,6 +1,7 @@
 from django.db import models
 
 class group(models.Model):
+    '''메뉴 그룹'''
     group_nm = models.CharField('그룹명' , max_length = 126, null = False) #그룹명이 없으면 단독 실행
     group_sort = models.IntegerField('그룹순서')
     create_dt = models.DateTimeField('작성일', auto_now_add = True)
@@ -12,7 +13,7 @@ class group(models.Model):
         return '{}'.format( self.group_nm  )
 
 class menu(models.Model):
-    
+    '''메뉴 리스트'''
     group = models.ForeignKey('w2ji_menu.group' , on_delete=models.CASCADE , null=True )
     #author = models.ForeignKey('w2ji_user.User' , related_name='bbs', on_delete=models.CASCADE)
     menu_nm  = models.CharField('메뉴명' , max_length = 126 , null = False)

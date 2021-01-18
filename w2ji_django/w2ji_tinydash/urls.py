@@ -3,7 +3,7 @@ from . import views
 
 app_name = 'w2ji_tinydash'
 urlpatterns = [    
-    path(''                             , views.index.as_view()     ) ,
+    path('ui-index/'                    , views.index.as_view()     ) ,
     path('ui-color/'                    , views.uicolor.as_view()   ) ,    
     path('ui-typograpy/'                , views.uitypograpy.as_view()   ) ,
     path('ui-icons/'                    , views.uiicons.as_view()   ) ,

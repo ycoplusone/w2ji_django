@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views.generic.base import TemplateView
+from django import template
 from . import models
 
 '''
@@ -21,6 +22,8 @@ class menu(TemplateView):
     def get(self, request, *args, **kwargs):
         ctx = { 
             'view' : self.__class__.__name__ , #클래스의 이름
-            'datas' : self.queryset ,    #self.queryset #걸색결과 
+            #'datas' : self.queryset ,    #self.queryset #걸색결과 
         }    #템플릿에 전달할 데이터
         return self.render_to_response(ctx)
+
+

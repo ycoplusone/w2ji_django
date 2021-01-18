@@ -3,6 +3,7 @@ from django.db import models
 class group(models.Model):
     '''메뉴 그룹'''
     group_nm = models.CharField('그룹명' , max_length = 126, null = False) #그룹명이 없으면 단독 실행
+    group_icon = models.CharField('아이콘' , max_length = 126, null = True )
     group_sort = models.IntegerField('그룹순서')
     create_dt = models.DateTimeField('작성일', auto_now_add = True)
     update_dt = models.DateTimeField('수정일' , auto_now = True )
@@ -10,7 +11,7 @@ class group(models.Model):
         db_table = 'w2ji_menu_group' # 테이블 이름 지정
     
     def __str__(self):
-        return '{}'.format( self.group_nm  )
+        return '{} [{}]'.format( self.group_nm , self.group_sort )
 
 class menu(models.Model):
     '''메뉴 리스트'''

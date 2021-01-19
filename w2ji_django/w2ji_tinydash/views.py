@@ -13,6 +13,20 @@ class index(TemplateView):  #목록보기
         }    #템플릿에 전달할 데이터
         return self.render_to_response(ctx)
 
+
+
+class dashboardanalytics(TemplateView):
+    template_name = 'dashboard-analytics.html'
+
+class dashboardsales(TemplateView):
+    template_name = 'dashboard-sales.html'
+
+class dashboardsaas(TemplateView):
+    template_name = 'dashboard-saas.html'   
+
+class dashboardsystem(TemplateView):
+    template_name = 'dashboard-system.html'    
+
 class uicolor(TemplateView):
     template_name = 'ui-color.html' #뷰 전용 템플릿 생성
 
@@ -37,6 +51,9 @@ class uitabsaccordion(TemplateView):
 class uiprogress(TemplateView):
     template_name = 'ui-progress.html' #뷰 전용 템플릿 생성
 
+class calendar(TemplateView):
+    template_name = 'calendar.html'
+
 class widgets(TemplateView):
     template_name = 'widgets.html' #뷰 전용 템플릿 생성        
 
@@ -57,3 +74,13 @@ class form_validation(TemplateView):
     
 class form_wizard(TemplateView):
     template_name = 'form_wizard.html' #뷰 전용 템플릿 생성
+    
+class table_basic(TemplateView):
+    template_name = 'table_basic.html' #뷰 전용 템플릿 생성    
+
+class table_advanced(TemplateView):
+    template_name = 'table_advanced.html' #뷰 전용 템플릿 생성    
+
+class table_datatables(TemplateView):
+    template_name = 'table_datatables.html' #뷰 전용 템플릿 생성    
+    

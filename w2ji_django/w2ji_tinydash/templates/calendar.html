@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-<title>Tiny Dashboard - A Bootstrap Dashboard Template</title>
+    <title>Tiny Dashboard - A Bootstrap Dashboard Template</title>
 {% endblock title %}
 
 {% block meta %}
@@ -10,31 +10,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="/media/favicon.ico">
+    <link rel="icon" href="/media/favicon.ico">    
 {% endblock meta %}
 
-{% block css %}    
-	<!-- Simple bar CSS -->
+{% block css %}
+    <!-- Simple bar CSS -->
     <link rel="stylesheet" href="{% static '/w2ji_css/simplebar.css' %}">
-	<!-- Fonts CSS -->
-    <link href="{% static '/w2ji_fonts/googlefonts.css' %}" rel="stylesheet">
+    <!-- Fonts CSS -->
+    <link href="{% static '/w2ji_fonts/googlefonts.css' %}" rel="stylesheet">    
     <!-- Icons CSS -->
     <link rel="stylesheet" href="{% static '/w2ji_css/feather.css' %}">
-	
-	<!-- form CSS -->       
+    
+    <!-- Icons CSS2 -->
     <link rel="stylesheet" href="{% static '/w2ji_css/select2.css' %}">
     <link rel="stylesheet" href="{% static '/w2ji_css/dropzone.css' %}">
     <link rel="stylesheet" href="{% static '/w2ji_css/uppy.min.css' %}">
     <link rel="stylesheet" href="{% static '/w2ji_css/jquery.steps.css' %}">
     <link rel="stylesheet" href="{% static '/w2ji_css/jquery.timepicker.css' %}">
     <link rel="stylesheet" href="{% static '/w2ji_css/quill.snow.css' %}">
-    
+
+    <!-- FullCalendar CSS -->
+    <link rel="stylesheet" href="{% static '/w2ji_css/fullcalendar.css' %}">    
+        
     <!-- Date Range Picker CSS -->
     <link rel="stylesheet" href="{% static '/w2ji_css/daterangepicker.css' %}">
 	<!-- App CSS -->
     <link rel="stylesheet" href="{% static '/w2ji_css/app-light.css' %}" id="lightTheme">
     <link rel="stylesheet" href="{% static '/w2ji_css/app-dark.css' %}" id="darkTheme" disabled>
 {% endblock css %}
+
+
 
 {% block content %}
   <body class="vertical  light  ">
@@ -47,112 +52,98 @@
       <main role="main" class="main-content">
         <div class="container-fluid">
           <div class="row justify-content-center">
-            <div class="col-12 col-lg-10">
-              <h2 class="page-title">Form Wizard</h2>
-              <p>Using jQuery Steps as default wizard plugin. That is an extremely flexible, compact and feature-rich plugin.</p>
-              <div class="card my-4">
-                <div class="card-header">
-                  <strong>Basic</strong>
+            <div class="col-12">
+              <div class="row align-items-center my-3">
+                <div class="col">
+                  <h2 class="page-title">Calendar</h2>
                 </div>
-                <div class="card-body">
-                  <div id="example-basic">
-                    <h3>Keyboard</h3>
-                    <section>
-                      <p>Try the keyboard navigation by clicking arrow left or right!</p>
-                    </section>
-                    <h3>Effects</h3>
-                    <section>
-                      <p>Wonderful transition effects.</p>
-                    </section>
-                    <h3>Pager</h3>
-                    <section>
-                      <p>The next and previous buttons help you to navigate through your content.</p>
-                    </section>
-                  </div>
-                </div> <!-- .card-body -->
-              </div> <!-- .card -->
-              <div class="card my-4">
-                <div class="card-header">
-                  <strong>Vertical</strong>
+                <div class="col-auto">
+                  <button type="button" class="btn" data-toggle="modal" data-target=".modal-calendar"><span class="fe fe-filter fe-16 text-muted"></span></button>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#eventModal"><span class="fe fe-plus fe-16 mr-3"></span>New Event</button>
                 </div>
-                <div class="card-body">
-                  <div id="example-vertical">
-                    <h3>Keyboard</h3>
-                    <section>
-                      <p>Try the keyboard navigation by clicking arrow left or right!</p>
-                    </section>
-                    <h3>Effects</h3>
-                    <section>
-                      <p>Wonderful transition effects.</p>
-                    </section>
-                    <h3>Pager</h3>
-                    <section>
-                      <p>The next and previous buttons help you to navigate through your content.</p>
-                    </section>
-                  </div>
-                </div> <!-- .card-body -->
-              </div> <!-- .card -->
-              <div class="card my-4">
-                <div class="card-header">
-                  <strong>Validation</strong>
-                </div>
-                <div class="card-body">
-                  <form id="example-form" action="#">
-                    <div>
-                      <h3>Account</h3>
-                      <section>
+              </div>
+              <div id='calendar'></div>
+              <!-- new event modal -->
+              <div class="modal fade" id="eventModal" tabindex="-1" role="dialog" aria-labelledby="eventModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="varyModalLabel">New Event</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body p-4">
+                      <form>
                         <div class="form-group">
-                          <label for="userName">User name *</label>
-                          <input id="userName" name="userName" type="text" class="form-control required">
+                          <label for="eventTitle" class="col-form-label">Title</label>
+                          <input type="text" class="form-control" id="eventTitle" placeholder="Add event title">
                         </div>
                         <div class="form-group">
-                          <label for="password">Password *</label>
-                          <input id="password" name="password" type="text" class="form-control required">
+                          <label for="eventNote" class="col-form-label">Note</label>
+                          <textarea class="form-control" id="eventNote" placeholder="Add some note for your event"></textarea>
                         </div>
-                        <div class="form-group">
-                          <label for="confirm">Confirm Password *</label>
-                          <input id="confirm" name="confirm" type="text" class="form-control required">
+                        <div class="form-row">
+                          <div class="form-group col-md-8">
+                            <label for="eventType">Event type</label>
+                            <select id="eventType" class="form-control select2">
+                              <option value="work">Work</option>
+                              <option value="home">Home</option>
+                            </select>
+                          </div>
                         </div>
-                        <div class="help-text text-muted">(*) Mandatory</div>
-                      </section>
-                      <h3>Profile</h3>
-                      <section>
                         <div class="form-row">
                           <div class="form-group col-md-6">
-                            <label for="name">First name *</label>
-                            <input id="name" name="name" type="text" class="form-control required">
+                            <label for="date-input1">Start Date</label>
+                            <div class="input-group">
+                              <div class="input-group-prepend">
+                                <div class="input-group-text" id="button-addon-date"><span class="fe fe-calendar fe-16"></span></div>
+                              </div>
+                              <input type="text" class="form-control drgpicker" id="drgpicker-start" value="04/24/2020">
+                            </div>
                           </div>
                           <div class="form-group col-md-6">
-                            <label for="surname">Last name *</label>
-                            <input id="surname" name="surname" type="text" class="form-control required">
+                            <label for="startDate">Start Time</label>
+                            <div class="input-group">
+                              <div class="input-group-prepend">
+                                <div class="input-group-text" id="button-addon-time"><span class="fe fe-clock fe-16"></span></div>
+                              </div>
+                              <input type="text" class="form-control time-input" id="start-time" placeholder="10:00 AM">
+                            </div>
                           </div>
                         </div>
-                        <div class="form-group">
-                          <label for="email">Email *</label>
-                          <input id="email" name="email" type="text" class="form-control required email">
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <label for="date-input1">End Date</label>
+                            <div class="input-group">
+                              <div class="input-group-prepend">
+                                <div class="input-group-text" id="button-addon-date"><span class="fe fe-calendar fe-16"></span></div>
+                              </div>
+                              <input type="text" class="form-control drgpicker" id="drgpicker-end" value="04/24/2020">
+                            </div>
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label for="startDate">End Time</label>
+                            <div class="input-group">
+                              <div class="input-group-prepend">
+                                <div class="input-group-text" id="button-addon-time"><span class="fe fe-clock fe-16"></span></div>
+                              </div>
+                              <input type="text" class="form-control time-input" id="end-time" placeholder="11:00 AM">
+                            </div>
+                          </div>
                         </div>
-                        <div class="form-group">
-                          <label for="address">Address</label>
-                          <input id="address" name="address" class="form-control" type="text">
-                        </div>
-                        <div class="help-text text-muted">(*) Mandatory</div>
-                      </section>
-                      <h3>Hints</h3>
-                      <section>
-                        <ul class="ml-5">
-                          <li>Foo</li>
-                          <li>Bar</li>
-                          <li>Foobar</li>
-                        </ul>
-                      </section>
-                      <h3>Finish</h3>
-                      <section>
-                        <input id="acceptTerms" name="acceptTerms" type="checkbox" class="required"> <label for="acceptTerms">I agree with the Terms and Conditions.</label>
-                      </section>
+                      </form>
                     </div>
-                  </form>
-                </div> <!-- .card-body -->
-              </div> <!-- .card -->
+                    <div class="modal-footer d-flex justify-content-between">
+                      <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="RepeatSwitch" checked>
+                        <label class="custom-control-label" for="RepeatSwitch">All day</label>
+                      </div>
+                      <button type="button" class="btn mb-2 btn-primary">Save Event</button>
+                    </div>
+                  </div>
+                </div>
+              </div> <!-- new event modal -->
             </div> <!-- .col-12 -->
           </div> <!-- .row -->
         </div> <!-- .container-fluid -->
@@ -281,7 +272,7 @@
         </div>
       </main> <!-- main -->
     </div> <!-- .wrapper -->
-
+    
     <script src="{% static '/w2ji_js/jquery.min.js' %}"></script>
     <script src="{% static '/w2ji_js/popper.min.js' %}"></script>
     <script src="{% static '/w2ji_js/moment.min.js' %}"></script>
@@ -292,31 +283,58 @@
     <script src="{% static '/w2ji_js/tinycolor-min.js' %}"></script>
     <script src="{% static '/w2ji_js/config.js' %}"></script>
     
-    <script src="{% static '/w2ji_js/d3.min.js' %}"></script>
-    <script src="{% static '/w2ji_js/topojson.min.js' %}"></script>
-    <script src="{% static '/w2ji_js/datamaps.all.min.js' %}"></script>
-    <script src="{% static '/w2ji_js/datamaps-zoomto.js' %}"></script>
-    <script src="{% static '/w2ji_js/datamaps.custom.js' %}"></script>
-    <script src="{% static '/w2ji_js/Chart.min.js' %}"></script>
+    <script src="{% static '/w2ji_js/fullcalendar.js' %}"></script>
+    <script src="{% static '/w2ji_js/fullcalendar.custom.js' %}"></script>
+
+    
     
     
     <script>
-      /* defind global options */
-      Chart.defaults.global.defaultFontFamily = base.defaultFontFamily;
-      Chart.defaults.global.defaultFontColor = colors.mutedColor;
+      /** full calendar */
+      var calendarEl = document.getElementById('calendar');
+      if (calendarEl)
+      {
+        document.addEventListener('DOMContentLoaded', function()
+        {
+          var calendar = new FullCalendar.Calendar(calendarEl,
+          {
+            plugins: ['dayGrid', 'timeGrid', 'list', 'bootstrap'],
+            timeZone: 'UTC',
+            themeSystem: 'bootstrap',
+            header:
+            {
+              left: 'today, prev, next',
+              center: 'title',
+              right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
+            },
+            buttonIcons:
+            {
+              prev: 'fe-arrow-left',
+              next: 'fe-arrow-right',
+              prevYear: 'left-double-arrow',
+              nextYear: 'right-double-arrow'
+            },
+            weekNumbers: true,
+            eventLimit: true, // allow "more" link when too many events
+            events: 'https://fullcalendar.io/demo-events.json'
+          });
+          calendar.render();
+        });
+      }
     </script>
-    <script src="{% static '/w2ji_js/gauge.min.js' %}"></script>
-    <script src="{% static '/w2ji_js/jquery.sparkline.min.js' %}"></script>
-    <script src="{% static '/w2ji_js/apexcharts.min.js' %}"></script>
-    <script src="{% static '/w2ji_js/apexcharts.custom.js' %}"></script>
+    
+   
+    
     <script src="{% static '/w2ji_js/jquery.mask.min.js' %}"></script>
     <script src="{% static '/w2ji_js/select2.min.js' %}"></script>
     <script src="{% static '/w2ji_js/jquery.steps.min.js' %}"></script>
     <script src="{% static '/w2ji_js/jquery.validate.min.js' %}"></script>
     <script src="{% static '/w2ji_js/jquery.timepicker.js' %}"></script>
+    
     <script src="{% static '/w2ji_js/dropzone.min.js' %}"></script>
     <script src="{% static '/w2ji_js/uppy.min.js' %}"></script>
     <script src="{% static '/w2ji_js/quill.min.js' %}"></script>
+    
     
     <script>
       $('.select2').select2(

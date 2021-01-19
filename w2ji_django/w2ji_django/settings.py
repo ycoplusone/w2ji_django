@@ -92,7 +92,7 @@ WSGI_APPLICATION = 'w2ji_django.wsgi.application'
 DATABASES = {
     
     
-    'default' : {
+    'mysql' : {
         'ENGINE'  : 'django.db.backends.mysql'  , # 엔진 설정
         'NAME'    : 'w2ji_django'               , # db스키마      
         'USER'    : 'w2ji_django'               , # db 계정            
@@ -104,7 +104,7 @@ DATABASES = {
         }        
     } ,    
     
-    'test_sqlite3': {
+    'default': {
         'ENGINE'  : 'django.db.backends.sqlite3'            ,
         'NAME'    : os.path.join(BASE_DIR, 'w2ji.sqlite3')    ,
     } ,

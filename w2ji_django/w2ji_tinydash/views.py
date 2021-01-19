@@ -83,4 +83,15 @@ class table_advanced(TemplateView):
 
 class table_datatables(TemplateView):
     template_name = 'table_datatables.html' #뷰 전용 템플릿 생성    
+
+class chart_apexcharts(TemplateView):
+    template_name = 'chart_apexcharts.html' #뷰 전용 템플릿 생성
     
+class chart_chartjs(TemplateView):
+    template_name = 'chart_chartjs.html' #뷰 전용 템플릿 생성    
+
+class chart_datamaps(TemplateView):
+    template_name = 'chart_datamaps.html' #뷰 전용 템플릿 생성
+    
+class chart_inline(TemplateView):
+    template_name = 'chart_inline.html' #뷰 전용 템플릿 생성

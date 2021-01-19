@@ -37,5 +37,9 @@ urlpatterns = [
     path('table_advanced/'                  , views.table_advanced.as_view()   ) ,
     path('table_datatables/'                  , views.table_datatables.as_view()   ) ,
     
+    path('chart_apexcharts/'                , views.chart_apexcharts.as_view()   ) ,
+    path('chart_chartjs/'                   , views.chart_chartjs.as_view()   ) ,
+    path('chart_datamaps/'                  , views.chart_datamaps.as_view()   ) ,
+    path('chart_inline/'                    , views.chart_inline.as_view()   ) ,
     
 ]

@@ -42,4 +42,41 @@ urlpatterns = [
     path('chart_datamaps/'                  , views.chart_datamaps.as_view()   ) ,
     path('chart_inline/'                    , views.chart_inline.as_view()   ) ,
     
+    path('contacts_grid/'                    , views.contacts_grid.as_view()   ) ,
+    path('contacts_list/'                    , views.contacts_list.as_view()   ) ,
+    path('contacts_new/'                    , views.contacts_new.as_view()   ) ,
+    
+    path('files_grid/'                    , views.files_grid.as_view()   ) ,
+    path('files_list/'                    , views.files_list.as_view()   ) ,
+    
+    path('page_404/'                    , views.page_404.as_view()   ) ,
+    path('page_500/'                    , views.page_500.as_view()   ) ,
+    path('page_blank/'                    , views.page_blank.as_view()   ) ,    
+    path('page_invoice/'                    , views.page_invoice.as_view()   ) ,
+    path('page_orders/'                    , views.page_orders.as_view()   ) ,
+    path('page_timeline/'                    , views.page_timeline.as_view()   ) ,
+    
+    path('auth-confirm/'                    , views.auth_confirm.as_view()   ) ,
+    path('auth-login/'                    , views.auth_login.as_view()   ) ,
+    path('auth-login-half/'                    , views.auth_login_half.as_view()   ) ,
+    path('auth-register/'                    , views.auth_register.as_view()   ) ,
+    path('auth-resetpw/'                    , views.auth_resetpw.as_view()   ) ,    
+    
+    path('profile/'                    , views.profile.as_view()   ) ,
+    path('profile_notification/'                    , views.profile_notification.as_view()   ) ,
+    path('profile_security/'                    , views.profile_security.as_view()   ) ,
+    path('profile_settings/'                    , views.profile_settings.as_view()   ) ,
+    
+    path('support_center/'                    , views.support_center.as_view()   ) ,
+    path('support_faqs/'                    , views.support_faqs.as_view()   ) ,
+    path('support_ticket_detail/'                    , views.support_ticket_detail.as_view()   ) ,
+    path('support_ticket/'                    , views.support_ticket.as_view()   ) ,
+    
+    
+
+    
+    
+    
+    
 ]
+

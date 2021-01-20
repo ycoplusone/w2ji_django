@@ -1,0 +1,70 @@
+{% extends '_tiny.html' %}
+{% load static %}
+
+{% block title %}
+<title>Tiny Dashboard - A Bootstrap Dashboard Template</title>
+{% endblock title %}
+
+{% block meta %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/media/favicon.ico">
+{% endblock meta %}
+
+{% block css %}    
+	<!-- Simple bar CSS -->
+    <link rel="stylesheet" href="{% static '/w2ji_css/simplebar.css' %}">
+	<!-- Fonts CSS -->
+    <link href="{% static '/w2ji_fonts/googlefonts.css' %}" rel="stylesheet">
+    <!-- Icons CSS -->
+    <link rel="stylesheet" href="{% static '/w2ji_css/feather.css' %}">
+   
+    <!-- Date Range Picker CSS -->
+    <link rel="stylesheet" href="{% static '/w2ji_css/daterangepicker.css' %}">
+    
+	<!-- App CSS -->
+    <link rel="stylesheet" href="{% static '/w2ji_css/app-light.css' %}" id="lightTheme">
+    <link rel="stylesheet" href="{% static '/w2ji_css/app-dark.css' %}" id="darkTheme" disabled>
+{% endblock css %}
+
+
+{% block content %}
+  <body class="light ">
+    <div class="wrapper vh-100">
+      <div class="row align-items-center h-100">
+        <form class="col-lg-3 col-md-4 col-10 mx-auto text-center">
+          <div class="mx-auto text-center my-4">
+            <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="./index.html">
+              <svg version="1.1" id="logo" class="navbar-brand-img brand-md" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 120 120" xml:space="preserve">
+                <g>
+                  <polygon class="st0" points="78,105 15,105 24,87 87,87 	" />
+                  <polygon class="st0" points="96,69 33,69 42,51 105,51 	" />
+                  <polygon class="st0" points="78,33 15,33 24,15 87,15 	" />
+                </g>
+              </svg>
+            </a>
+            <h4 class="my-3">Password reset successfully!</h4>
+          </div>
+          <div class="alert alert-success" role="alert"> An email has been sent to your email <strong>email@example.com</strong>. Please check your email to get reset link </div>
+          <a href="/w2ji_tiny/ui-index" class="btn btn-lg btn-primary btn-block">Back to home</a>
+          <p class="mt-5 mb-3 text-muted">© 2020</p>
+        </form>
+      </div>
+    </div>
+
+	<script src="{% static '/w2ji_js/jquery.min.js' %}"></script>
+    <script src="{% static '/w2ji_js/popper.min.js' %}"></script>
+    <script src="{% static '/w2ji_js/moment.min.js' %}"></script>
+    <script src="{% static '/w2ji_js/bootstrap.min.js' %}"></script>
+    <script src="{% static '/w2ji_js/simplebar.min.js' %}"></script>
+    <script src="{% static '/w2ji_js/daterangepicker.js' %}"></script>
+    <script src="{% static '/w2ji_js/jquery.stickOnScroll.js' %}"></script>
+    <script src="{% static '/w2ji_js/tinycolor-min.js' %}"></script>
+    <script src="{% static '/w2ji_js/config.js' %}"></script>
+    <script src="{% static '/w2ji_js/apps.js' %}"></script>
+    
+
+  </body>
+{% endblock content %}

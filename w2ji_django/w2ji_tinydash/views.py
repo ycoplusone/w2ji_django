@@ -95,3 +95,77 @@ class chart_datamaps(TemplateView):
     
 class chart_inline(TemplateView):
     template_name = 'chart_inline.html' #뷰 전용 템플릿 생성
+
+class contacts_grid(TemplateView):
+    template_name = 'contacts-grid.html' #뷰 전용 템플릿 생성    
+
+class contacts_list(TemplateView):
+    template_name = 'contacts-list.html' #뷰 전용 템플릿 생성    
+    
+class contacts_new(TemplateView):
+    template_name = 'contacts-new.html' #뷰 전용 템플릿 생성    
+
+class files_grid(TemplateView):
+    template_name = 'files-grid.html' #뷰 전용 템플릿 생성    
+
+class files_list(TemplateView):
+    template_name = 'files-list.html' #뷰 전용 템플릿 생성    
+    
+class page_404(TemplateView):
+    template_name = 'page-404.html' #뷰 전용 템플릿 생성
+        
+class page_500(TemplateView):
+    template_name = 'page-500.html' #뷰 전용 템플릿 생성
+    
+class page_blank(TemplateView):
+    template_name = 'page-blank.html' #뷰 전용 템플릿 생성
+
+class page_invoice(TemplateView):
+    template_name = 'page-invoice.html' #뷰 전용 템플릿 생성
+
+class page_orders(TemplateView):
+    template_name = 'page-orders.html' #뷰 전용 템플릿 생성
+
+class page_timeline(TemplateView):
+    template_name = 'page-timeline.html' #뷰 전용 템플릿 생성
+    
+
+class auth_confirm(TemplateView):
+    template_name = 'auth-confirm.html' #뷰 전용 템플릿 생성
+    
+class auth_login(TemplateView):
+    template_name = 'auth-login.html' #뷰 전용 템플릿 생성
+
+
+class auth_login_half(TemplateView):
+    template_name = 'auth-login-half.html' #뷰 전용 템플릿 생성            
+
+class auth_register(TemplateView):
+    template_name = 'auth-register.html' #뷰 전용 템플릿 생성
+    
+class auth_resetpw(TemplateView):
+    template_name = 'auth-resetpw.html' #뷰 전용 템플릿 생성    
+
+class profile(TemplateView):
+    template_name = 'profile.html' #뷰 전용 템플릿 생성    
+
+class profile_notification(TemplateView):
+    template_name = 'profile-notification.html' #뷰 전용 템플릿 생성
+
+class profile_security(TemplateView):
+    template_name = 'profile-security.html' #뷰 전용 템플릿 생성    
+
+class profile_settings(TemplateView):
+    template_name = 'profile-settings.html' #뷰 전용 템플릿 생성
+    
+class support_center(TemplateView):
+    template_name = 'support-center.html' #뷰 전용 템플릿 생성
+
+class support_faqs(TemplateView):
+    template_name = 'support-faqs.html' #뷰 전용 템플릿 생성
+
+class support_ticket_detail(TemplateView):
+    template_name = 'support-ticket-detail.html' #뷰 전용 템플릿 생성
+
+class support_ticket(TemplateView):
+    template_name = 'support-tickets.html' #뷰 전용 템플릿 생성    

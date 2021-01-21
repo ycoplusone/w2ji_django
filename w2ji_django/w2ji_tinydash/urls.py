@@ -72,6 +72,8 @@ urlpatterns = [
     path('support_ticket_detail/'                    , views.support_ticket_detail.as_view()   ) ,
     path('support_ticket/'                    , views.support_ticket.as_view()   ) ,
     
+    path('addtab/'                    , views.addtab.as_view()   ) ,
+    
     
 
     

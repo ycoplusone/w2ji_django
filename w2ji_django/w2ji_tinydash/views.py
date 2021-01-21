@@ -169,3 +169,6 @@ class support_ticket_detail(TemplateView):
 
 class support_ticket(TemplateView):
     template_name = 'support-tickets.html' #뷰 전용 템플릿 생성    
+
+class addtab(TemplateView):
+    template_name = 'addtab.html' #뷰 전용 템플릿 생성    

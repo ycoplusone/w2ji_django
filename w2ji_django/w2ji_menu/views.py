@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.views.generic.base import TemplateView
 from django import template
 from . import models
+from django.core import serializers
+from django.http.response import HttpResponse
 
 '''
     queryset = None #models.bbs.objects.all() #모든 게시글을 가져온다.
@@ -26,4 +28,7 @@ class menu(TemplateView):
         }    #템플릿에 전달할 데이터
         return self.render_to_response(ctx)
 
-
+def jsontest(request):
+    queryset = models.menu.objects.all()
+    list = serializers.serialize('json', queryset)
+    return HttpResponse(list, content_type="text/json-comment-filtered")

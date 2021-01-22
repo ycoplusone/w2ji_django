@@ -7,25 +7,20 @@
 		{% endblock title %}
 
 		<!-- 페이지별 메타 데이터 공간 -->
-       	{% block meta %}
-       	
+       	{% block meta %}       	
        	{% endblock meta %}
        	
        	<!-- 페이지별 css -->
        	{% block css %}
-       	{% endblock css %}       	
+       	{% endblock css %}
+       	<!-- App CSS -->
+	    <link rel="stylesheet" href="{% static '/w2ji_css/app-light.css' %}" id="lightTheme">
+    	<link rel="stylesheet" href="{% static '/w2ji_css/app-dark.css' %}" id="darkTheme" disabled>       	
 		
 		<!-- 페이지별 스크립트 공간 -->
        	{% block scripts %}
        	{% endblock scripts %}       	
 </head>	
-
 {% block content %}
 {% endblock content %}
-
-
-<!-- 페이지별 스크립트 공간 -->
-{% block scripts2 %}
-{% endblock scripts2 %}
-
 </html>

@@ -90,24 +90,27 @@ WSGI_APPLICATION = 'w2ji_django.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
-    
-    
-    'mysql' : {
-        'ENGINE'  : 'django.db.backends.mysql'  , # 엔진 설정
-        'NAME'    : 'w2ji_django'               , # db스키마      
-        'USER'    : 'w2ji_django'               , # db 계정            
-        'PASSWORD': 'w2ji_django'               , # db 비밀번호     
-        'HOST'    : 'localhost'                 , # 서버 정보
-        'PORT'    : '3306'                      , # 서버 포트
-        'OPTIONS' : {
-            'init_command': 'SET sql_mode="STRICT_TRANS_TABLES"'
-        }        
-    } ,    
-    
     'default': {
         'ENGINE'  : 'django.db.backends.sqlite3'            ,
         'NAME'    : os.path.join(BASE_DIR, 'w2ji.sqlite3')    ,
     } ,
+    
+    
+    #'mysql' : {
+    #    'ENGINE'  : 'django.db.backends.mysql'  , # 엔진 설정
+    #    'NAME'    : 'w2ji_django'               , # db스키마      
+    #    'USER'    : 'w2ji_django'               , # db 계정            
+    #    'PASSWORD': 'w2ji_django'               , # db 비밀번호     
+    #    'HOST'    : 'localhost'                 , # 서버 정보
+    #    'PORT'    : '3306'                      , # 서버 포트
+    #    'OPTIONS' : {
+    #       'init_command': 'SET sql_mode="STRICT_TRANS_TABLES"'
+    #    }        
+    #} ,  
+    
+      
+    
+    
         
     
      

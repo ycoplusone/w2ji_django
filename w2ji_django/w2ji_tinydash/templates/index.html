@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="{% static '/w2ji_css/daterangepicker.css' %}">
     <!-- App CSS -->
     <link rel="stylesheet" href="{% static '/w2ji_css/app-light.css' %}" id="lightTheme">
-    <link rel="stylesheet" href="{% static '/w2ji_css/app-dark.css' %}" id="darkTheme" disabled>
+    
 {% endblock css %}
 
 {% block content %}  
@@ -536,7 +536,7 @@
     <script src="{% static '/w2ji_js/daterangepicker.js' %}"></script>
     <script src="{% static '/w2ji_js/jquery.stickOnScroll.js' %}"></script>
     <script src="{% static '/w2ji_js/tinycolor-min.js' %}"></script>
-    <script src="{% static '/w2ji_js/config.js' %}"></script>
+    <script src="/static/w2ji/js/config.js"></script> <!-- 기본변수 로드 apps.js와 연동된다. -->
     <script src="{% static '/w2ji_js/d3.min.js' %}"></script>
     <script src="{% static '/w2ji_js/topojson.min.js' %}"></script>
     <script src="{% static '/w2ji_js/datamaps.all.min.js' %}"></script>
@@ -763,6 +763,6 @@
         });
       }
     </script>
-    <script src="{% static '/w2ji_js/apps.js' %}"></script>
+    <script src="/static/w2ji/js/apps.js"></script>
   </body>
 {% endblock content %}

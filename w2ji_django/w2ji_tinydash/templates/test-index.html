@@ -15,21 +15,22 @@
 
 {% block css %}
     <!-- Simple bar CSS -->
-    <link rel="stylesheet" href="{% static '/w2ji_css/simplebar.css' %}">
-    <!-- Fonts CSS -->
-    <link href="{% static '/w2ji_fonts/googlefonts.css' %}" rel="stylesheet">
-    <!-- Icons CSS -->
-    <link rel="stylesheet" href="{% static '/w2ji_css/feather.css' %}">
+    <link rel="stylesheet" href="/static/w2ji/css/simplebar.css">
     
-    <link rel="stylesheet" href="{% static '/w2ji_css/select2.css' %}">
-    <link rel="stylesheet" href="{% static '/w2ji_css/dropzone.css' %}">
-    <link rel="stylesheet" href="{% static '/w2ji_css/uppy.min.css' %}">
-    <link rel="stylesheet" href="{% static '/w2ji_css/jquery.steps.css' %}">
-    <link rel="stylesheet" href="{% static '/w2ji_css/jquery.timepicker.css' %}">
-    <link rel="stylesheet" href="{% static '/w2ji_css/quill.snow.css' %}">
+    <!-- Fonts CSS -->
+    <link rel="stylesheet" href="/static/w2ji/fonts/googlefonts.css?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap">
+    <!-- Icons CSS -->
+    <link rel="stylesheet" href="/static/w2ji/css/feather.css">
+    
+    <link rel="stylesheet" href="/static/w2ji/css/select2.css">
+    <link rel="stylesheet" href="/static/w2ji/css/dropzone.css">
+    <link rel="stylesheet" href="/static/w2ji/css/uppy.min.css">
+    <link rel="stylesheet" href="/static/w2ji/css/jquery.steps.css">
+    <link rel="stylesheet" href="/static/w2ji/css/jquery.timepicker.css"> 
+    <link rel="stylesheet" href="/static/w2ji/css/quill.snow.css">
     
     <!-- Date Range Picker CSS -->
-    <link rel="stylesheet" href="{% static '/w2ji_css/daterangepicker.css' %}">
+    <link rel="stylesheet" href="/static/w2ji/css/daterangepicker.css"><!-- date picker 형식 -->
 
 {% endblock css %}
 
@@ -527,51 +528,47 @@
       
     </div> <!-- .wrapper -->
     
-    <script src="{% static '/w2ji_js/jquery.min.js' %}"></script>
-    <script src="{% static '/w2ji_js/popper.min.js' %}"></script>
-    <script src="{% static '/w2ji_js/moment.min.js' %}"></script>
-    <script src="{% static '/w2ji_js/bootstrap.min.js' %}"></script>
-    <script src="{% static '/w2ji_js/simplebar.min.js' %}"></script>
-    <script src="{% static '/w2ji_js/daterangepicker.js' %}"></script>
-    <script src="{% static '/w2ji_js/jquery.stickOnScroll.js' %}"></script>
-    <script src="{% static '/w2ji_js/tinycolor-min.js' %}"></script>
-    <script src="{% static '/w2ji_js/config.js' %}"></script>
     
+    <script src="/static/w2ji/js/jquery.min.js"></script> <!-- 제이쿼리 -->
+    <script src="/static/w2ji/js/popper.min.js"></script> <!-- tooltip  -->
+    <script src="/static/w2ji/js/moment.min.js"></script> <!-- 날짜를 화면에 보기 편하게 출력 -->
+    <script src="/static/w2ji/js/bootstrap.min.js"></script>
+    <script src="/static/w2ji/js/simplebar.min.js"></script>
+    <script src="/static/w2ji/js/daterangepicker.js"></script><!-- date picker  -->
+    <script src="/static/w2ji/js/jquery.stickOnScroll.js"></script> <!-- 일종의 레이블 고정 -->
+    <script src="/static/w2ji/js/tinycolor-min.js"></script> <!-- 색결정 -->
     
-
+    <script src="/static/w2ji/js/config.js"></script> <!-- 기본변수 로드 apps.js와 연동된다. -->
+    
     
 	<!-- start of 차트 -->
-    <script src="{% static '/w2ji_js/d3.min.js' %}"></script>
-    <script src="{% static '/w2ji_js/Chart.min.js' %}"></script>
-    <script>
-      /* defind global options */
-      Chart.defaults.global.defaultFontFamily = base.defaultFontFamily;
-      Chart.defaults.global.defaultFontColor = colors.mutedColor;
-    </script>    
-	<script src="{% static '/w2ji_js/gauge.min.js' %}"></script>
-    <script src="{% static '/w2ji_js/jquery.sparkline.min.js' %}"></script>
-    <script src="{% static '/w2ji_js/apexcharts.min.js' %}"></script>
-    <script src="{% static '/w2ji_js/apexcharts.custom.js' %}"></script> 
+    <script src="/static/w2ji/js/d3.min.js"></script>
+    <script src="/static/w2ji/js/Chart.min.js"></script>
+    
+	<script src="/static/w2ji/js/gauge.min.js"></script>
+    <script src="/static/w2ji/js/jquery.sparkline.min.js"></script>
+    <script src="/static/w2ji/js/apexcharts.min.js"></script>
+    <script src="/static/w2ji/js/apexcharts.custom.js"></script> 
     <!-- end of 차트 -->
     
     <!-- start of 지도 관련 데이터  -->
-    <script src="{% static '/w2ji_js/topojson.min.js' %}"></script>
-	<script src="{% static '/w2ji_js/datamaps.all.min.js' %}"></script>
-    <script src="{% static '/w2ji_js/datamaps-zoomto.js' %}"></script>
-    <script src="{% static '/w2ji_js/datamaps.custom.js' %}"></script>
+    <script src="/static/w2ji/js/topojson.min.js"></script>
+	<script src="/static/w2ji/js/datamaps.all.min.js"></script>
+    <script src="/static/w2ji/js/datamaps-zoomto.js"></script>
+    <script src="/static/w2ji/js/datamaps.custom.js"></script>
     <!-- end of 지도 관련 데이터  -->
     
-
+    <script src="/static/w2ji/js/jquery.mask.min.js"></script> <!-- 문자형식의 포맷 정하기 -->
+    <script src="/static/w2ji/js/select2.min.js"></script> <!-- 다중 선택 관련  -->
+    <script src="/static/w2ji/js/jquery.steps.min.js"></script> <!-- form wizard 품 위자드 관련  -->
+    <script src="/static/w2ji/js/jquery.validate.min.js"></script> <!-- 값을 검증 -->
+    <script src="/static/w2ji/js/jquery.timepicker.js"></script> <!-- 시간 선택 -->
+    <script src="/static/w2ji/js/dropzone.min.js"></script> <!-- 드랍 파일 관련 -->
+    <script src="/static/w2ji/js/uppy.min.js"></script> <!-- 파일 , 카메라 , 기타 저장 관련 -->
     
-    <script src="{% static '/w2ji_js/jquery.mask.min.js' %}"></script>
-    <script src="{% static '/w2ji_js/select2.min.js' %}"></script>
-    <script src="{% static '/w2ji_js/jquery.steps.min.js' %}"></script>
-    <script src="{% static '/w2ji_js/jquery.validate.min.js' %}"></script>
-    <script src="{% static '/w2ji_js/jquery.timepicker.js' %}"></script>
-    <script src="{% static '/w2ji_js/dropzone.min.js' %}"></script>
-    <script src="{% static '/w2ji_js/uppy.min.js' %}"></script>
-    <script src="{% static '/w2ji_js/quill.min.js' %}"></script>   
+    <script src="/static/w2ji/js/quill.min.js"></script> <!-- form style 텍스트 스타일 관련 -->   
     
-    <script src="{% static '/w2ji_js/apps.js' %}"></script>
+    
+    <script src="/static/w2ji/js/apps.js"></script>
   </body>
 {% endblock content %}

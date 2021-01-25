@@ -22,7 +22,8 @@
 					<span class="ml-3 item-text">{{group.group_nm}}</span>                
 				</a>
 				<ul class="collapse list-unstyled pl-4 w-100" id="group_{{group.id}}">
-				{% for menu in menus %} <!-- for tag 시작 -->
+				<!-- for tag 시작 -->
+				{% for menu in menus %} 
 					{% if group.group_nm == menu.group.group_nm %}
 						<li class="nav-item active">
 		                  <a class="nav-link pl-3" href="{{menu.menu_url}}"><span class="ml-1 item-text">{{menu.menu_nm}}</span></a>

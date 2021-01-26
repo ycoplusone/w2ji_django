@@ -172,3 +172,6 @@ class support_ticket(TemplateView):
 
 class test_index(TemplateView):
     template_name = 'test-index.html' #뷰 전용 템플릿 생성    
+
+class test_master(TemplateView):
+    template_name = 'test-master.html' #뷰 전용 템플릿 생성

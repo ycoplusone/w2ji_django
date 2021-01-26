@@ -73,6 +73,7 @@ urlpatterns = [
     path('support_ticket/'                    , views.support_ticket.as_view()   ) ,
     
     path('test-index/'                    , views.test_index.as_view()   ) ,
+    path('test-master/'                    , views.test_master.as_view()   ) ,
     
     
 

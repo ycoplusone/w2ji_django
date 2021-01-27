@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+	<head>
+		<!-- 타이틀 공간 -->
+		{% block title %}{% endblock title %}
+
+		<!-- 페이지별 메타 데이터 공간 -->
+       	{% block meta %}{% endblock meta %}
+   		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	    <meta name="description" content="">
+	    <meta name="author" content="">
+	    <link rel="icon" href="/static/favicon.ico">      	
+       	
+       	<!-- 추가 css -->
+       	{% block css %}{% endblock css %}
+
+		<!-- Simple bar CSS -->
+		<link rel="stylesheet" href="/static/w2ji/css/simplebar.css">		
+		<!-- Fonts CSS -->
+		<link rel="stylesheet" href="/static/w2ji/fonts/googlefonts.css">		
+		<!-- Icons CSS -->
+		<link rel="stylesheet" href="/static/w2ji/css/feather.css">		
+		<!-- form CSS2 -->
+		<link rel="stylesheet" href="/static/w2ji/css/select2.css">
+		<link rel="stylesheet" href="/static/w2ji/css/dropzone.css">
+		<link rel="stylesheet" href="/static/w2ji/css/uppy.min.css">
+		<link rel="stylesheet" href="/static/w2ji/css/jquery.steps.css">
+		<link rel="stylesheet" href="/static/w2ji/css/jquery.timepicker.css">
+		<link rel="stylesheet" href="/static/w2ji/css/daterangepicker.css"> <!-- Date Range Picker CSS -->
+		<link rel="stylesheet" href="/static/w2ji/css/quill.snow.css">		
+		<!--table css-->
+		<link rel="stylesheet" href="/static/w2ji/css/dataTables.bootstrap4.css">		
+		<!-- FullCalendar CSS -->
+		<link rel="stylesheet" href="/static/w2ji/css/fullcalendar.css">		
+		<!-- App CSS -->
+		<link rel="stylesheet" href="/static/w2ji/css/app-light.css" id="lightTheme">
+		<link rel="stylesheet" href="/static/w2ji/css/app-dark.css"  id="darkTheme" disabled>       	
+		
+		<!-- 페이지별 스크립트 공간 -->
+       	{% block script0 %}{% endblock script0 %}       	
+</head>	
+
+<body class="horizontal light">
+    <div class="wrapper">	
+	{% include 'tiny/_top.html' %}
+    
+    <!-- html 부분 main -->	
+	{% block content %}{% endblock content %}
+    	
+	</div><!-- .wrapper -->
+	
+	<!-- 기본 -->
+	<script src="/static/w2ji/js/jquery.min.js"></script>
+	<script src="/static/w2ji/js/popper.min.js"></script>
+	<script src="/static/w2ji/js/moment.min.js"></script>
+	<script src="/static/w2ji/js/bootstrap.min.js"></script>
+	<script src="/static/w2ji/js/simplebar.min.js"></script>
+	<script src="/static/w2ji/js/daterangepicker.js"></script>
+	<script src="/static/w2ji/js/jquery.stickOnScroll.js"></script>
+	<script src="/static/w2ji/js/tinycolor-min.js"></script>
+		
+	<script src="/static/w2ji/js/jquery.mask.min.js"></script> <!-- 문자형식의 포맷 정하기 -->
+	<script src="/static/w2ji/js/select2.min.js"></script> <!-- 다중 선택 관련  -->
+	<script src="/static/w2ji/js/jquery.steps.min.js"></script> <!-- form wizard 품 위자드 관련  -->
+	<script src="/static/w2ji/js/jquery.validate.min.js"></script> <!-- 값을 검증 -->
+	<script src="/static/w2ji/js/jquery.timepicker.js"></script> <!-- 시간 선택 -->
+		
+	<script src="/static/w2ji/js/config.js"></script>
+	
+	<!-- table -->
+	<script src="/static/w2ji/js/jquery.dataTables.min.js"></script>
+	<script src="/static/w2ji/js/dataTables.bootstrap4.min.js"></script>
+	
+	<!-- 차트 -->
+	<script src="/static/w2ji/js/d3.min.js"></script>
+	<script src="/static/w2ji/js/Chart.min.js"></script>    
+	<script src="/static/w2ji/js/gauge.min.js"></script>
+	<script src="/static/w2ji/js/jquery.sparkline.min.js"></script>
+	<script src="/static/w2ji/js/apexcharts.min.js"></script>
+	<script src="/static/w2ji/js/apexcharts.custom.js"></script> <!-- 커스텀 차트 차후 변경 예정 -->
+	
+	<!-- start of 지도 관련 데이터  -->
+	<script src="/static/w2ji/js/topojson.min.js"></script>
+	<script src="/static/w2ji/js/datamaps.all.min.js"></script>
+	<script src="/static/w2ji/js/datamaps-zoomto.js"></script>
+	<script src="/static/w2ji/js/datamaps.custom.js"></script>
+	
+	<!-- 전체 달력 -->
+	<script src="/static/w2ji/js/fullcalendar.js"></script>
+	<script src="/static/w2ji/js/fullcalendar.custom.js"></script>
+	
+	<script src="/static/w2ji/js/dropzone.min.js"></script> <!-- 드랍 파일 관련 -->
+	<script src="/static/w2ji/js/uppy.min.js"></script> <!-- 파일 , 카메라 , 기타 저장 관련 -->
+	<script src="/static/w2ji/js/quill.min.js"></script> <!-- form style 텍스트 스타일 관련 -->
+	
+	<!-- javascript -->
+	{% block script1 %}{% endblock script1 %}
+	
+	<!-- 기본 -->
+	<script src="/static/w2ji/js/apps.js"></script>
+	
+</body>
+</html>

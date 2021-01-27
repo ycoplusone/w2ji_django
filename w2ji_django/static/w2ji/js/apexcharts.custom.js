@@ -18,18 +18,18 @@ var columnChart, columnChartoptions = {
         chart: {
             type: "bar",
             height: 350,
-            stacked: !1,
+            stacked: false,
             columnWidth: "70%",
             zoom: {
-                enabled: !0
+                enabled: true
             },
             toolbar: {
-                show: !1
+                show: false
             },
             background: "transparent"
         },
         dataLabels: {
-            enabled: !1
+            enabled: false
         },
         theme: {
             mode: colors.chartTheme
@@ -46,10 +46,10 @@ var columnChart, columnChartoptions = {
         }],
         plotOptions: {
             bar: {
-                horizontal: !1,
+                horizontal: false,
                 columnWidth: "40%",
                 radius: 30,
-                enableShades: !1,
+                enableShades: false,
                 endingShape: "rounded"
             }
         },
@@ -57,8 +57,8 @@ var columnChart, columnChartoptions = {
             type: "datetime",
             categories: ["01/01/2020 GMT", "01/02/2020 GMT", "01/03/2020 GMT", "01/04/2020 GMT", "01/05/2020 GMT", "01/06/2020 GMT", "01/07/2020 GMT", "01/08/2020 GMT", "01/09/2020 GMT", "01/10/2020 GMT", "01/11/2020 GMT", "01/12/2020 GMT", "01/13/2020 GMT", "01/14/2020 GMT", "01/15/2020 GMT", "01/16/2020 GMT", "01/17/2020 GMT", "01/18/2020 GMT"],
             labels: {
-                show: !0,
-                trim: !0,
+                show: true,
+                trim: true,
                 minHeight: void 0,
                 maxHeight: 120,
                 style: {
@@ -68,13 +68,13 @@ var columnChart, columnChartoptions = {
                 }
             },
             axisBorder: {
-                show: !1
+                show: false
             }
         },
         yaxis: {
             labels: {
-                show: !0,
-                trim: !1,
+                show: true,
+                trim: false,
                 offsetX: -10,
                 minHeight: void 0,
                 maxHeight: 120,
@@ -91,7 +91,7 @@ var columnChart, columnChartoptions = {
             fontWeight: 400,
             labels: {
                 colors: colors.mutedColor,
-                useSeriesColors: !1
+                useSeriesColors: false
             },
             markers: {
                 width: 10,
@@ -110,10 +110,10 @@ var columnChart, columnChartoptions = {
                 vertical: 0
             },
             onItemClick: {
-                toggleDataSeries: !0
+                toggleDataSeries: true
             },
             onItemHover: {
-                highlightDataSeries: !0
+                highlightDataSeries: true
             }
         },
         fill: {
@@ -121,18 +121,18 @@ var columnChart, columnChartoptions = {
             colors: [base.primaryColor, extend.primaryColorLighter]
         },
         grid: {
-            show: !0,
+            show: true,
             borderColor: colors.borderColor,
             strokeDashArray: 0,
             position: "back",
             xaxis: {
                 lines: {
-                    show: !1
+                    show: false
                 }
             },
             yaxis: {
                 lines: {
-                    show: !0
+                    show: true
                 }
             },
             row: {
@@ -167,20 +167,20 @@ var barChart, barChartoptions = {
         chart: {
             type: "bar",
             height: 350,
-            stacked: !0,
+            stacked: true,
             columnWidth: "70%",
             zoom: {
-                enabled: !1
+                enabled: false
             },
             toolbar: {
-                enabled: !1
+                enabled: false
             }
         },
         theme: {
             mode: colors.chartTheme
         },
         dataLabels: {
-            enabled: !0
+            enabled: true
         },
         responsive: [{
             breakpoint: 480,
@@ -194,15 +194,15 @@ var barChart, barChartoptions = {
         }],
         plotOptions: {
             bar: {
-                horizontal: !0,
+                horizontal: true,
                 columnWidth: "30%"
             }
         },
         xaxis: {
             categories: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
             labels: {
-                show: !0,
-                trim: !1,
+                show: true,
+                trim: false,
                 minHeight: void 0,
                 maxHeight: 120,
                 style: {
@@ -212,13 +212,13 @@ var barChart, barChartoptions = {
                 }
             },
             axisBorder: {
-                show: !1
+                show: false
             }
         },
         yaxis: {
             labels: {
-                show: !0,
-                trim: !1,
+                show: true,
+                trim: false,
                 offsetX: -5,
                 minHeight: void 0,
                 maxHeight: 120,
@@ -235,7 +235,7 @@ var barChart, barChartoptions = {
             fontWeight: 400,
             labels: {
                 colors: colors.mutedColor,
-                useSeriesColors: !1
+                useSeriesColors: false
             },
             offsetY: 10,
             markers: {
@@ -255,10 +255,10 @@ var barChart, barChartoptions = {
                 vertical: 0
             },
             onItemClick: {
-                toggleDataSeries: !0
+                toggleDataSeries: true
             },
             onItemHover: {
-                highlightDataSeries: !0
+                highlightDataSeries: true
             }
         },
         fill: {
@@ -266,18 +266,18 @@ var barChart, barChartoptions = {
             colors: chartColors
         },
         grid: {
-            show: !0,
+            show: true,
             borderColor: colors.borderColor,
             strokeDashArray: 0,
             position: "back",
             xaxis: {
                 lines: {
-                    show: !0
+                    show: true
                 }
             },
             yaxis: {
                 lines: {
-                    show: !1
+                    show: false
                 }
             },
             row: {
@@ -312,19 +312,19 @@ var lineChart, lineChartoptions = {
         chart: {
             height: 350,
             type: "line",
-            background: !1,
+            background: false,
             zoom: {
-                enabled: !1
+                enabled: false
             },
             toolbar: {
-                show: !1
+                show: false
             }
         },
         theme: {
             mode: colors.chartTheme
         },
         stroke: {
-            show: !0,
+            show: true,
             curve: "smooth",
             lineCap: "round",
             colors: chartColors,
@@ -332,7 +332,7 @@ var lineChart, lineChartoptions = {
             dashArray: [0, 0, 0]
         },
         dataLabels: {
-            enabled: !1
+            enabled: false
         },
         responsive: [{
             breakpoint: 480,
@@ -359,7 +359,7 @@ var lineChart, lineChartoptions = {
             offsetY: 0,
             onClick: void 0,
             onDblClick: void 0,
-            showNullDataPoints: !0,
+            showNullDataPoints: true,
             hover: {
                 size: void 0,
                 sizeOffset: 3
@@ -369,8 +369,8 @@ var lineChart, lineChartoptions = {
             type: "datetime",
             categories: ["01/01/2020 GMT", "01/02/2020 GMT", "01/03/2020 GMT", "01/04/2020 GMT", "01/05/2020 GMT", "01/06/2020 GMT", "01/07/2020 GMT", "01/08/2020 GMT", "01/09/2020 GMT", "01/10/2020 GMT", "01/11/2020 GMT", "01/12/2020 GMT", "01/13/2020 GMT", "01/14/2020 GMT", "01/15/2020 GMT", "01/16/2020 GMT", "01/17/2020 GMT", "01/18/2020 GMT"],
             labels: {
-                show: !0,
-                trim: !1,
+                show: true,
+                trim: false,
                 minHeight: void 0,
                 maxHeight: 120,
                 style: {
@@ -380,13 +380,13 @@ var lineChart, lineChartoptions = {
                 }
             },
             axisBorder: {
-                show: !1
+                show: false
             }
         },
         yaxis: {
             labels: {
-                show: !0,
-                trim: !1,
+                show: true,
+                trim: false,
                 offsetX: -10,
                 minHeight: void 0,
                 maxHeight: 120,
@@ -403,7 +403,7 @@ var lineChart, lineChartoptions = {
             fontWeight: 400,
             labels: {
                 colors: colors.mutedColor,
-                useSeriesColors: !1
+                useSeriesColors: false
             },
             markers: {
                 width: 10,
@@ -422,25 +422,25 @@ var lineChart, lineChartoptions = {
                 vertical: 0
             },
             onItemClick: {
-                toggleDataSeries: !0
+                toggleDataSeries: true
             },
             onItemHover: {
-                highlightDataSeries: !0
+                highlightDataSeries: true
             }
         },
         grid: {
-            show: !0,
+            show: true,
             borderColor: colors.borderColor,
             strokeDashArray: 0,
             position: "back",
             xaxis: {
                 lines: {
-                    show: !1
+                    show: false
                 }
             },
             yaxis: {
                 lines: {
-                    show: !0
+                    show: true
                 }
             },
             row: {
@@ -461,6 +461,7 @@ var lineChart, lineChartoptions = {
     },
     lineChartCtn = document.querySelector("#lineChart");
 lineChartCtn && (lineChart = new ApexCharts(lineChartCtn, lineChartoptions)).render();
+
 var areachart, areaChartOptions = {
         series: [{
             name: "Website",
@@ -471,28 +472,33 @@ var areachart, areaChartOptions = {
         }, {
             name: "Others",
             data: [5, 25, 9, 14, 14, 32, 21, 5, 12, 25, 5, 55, 9, 14, 14, 32, 21, 65]
-        }],
+        }, {
+            name: "Others1",
+            data: [15, 125, 19, 114, 114, 132, 121, 15, 112, 125, 15, 155, 19, 114, 114, 132, 121, 165]
+        }, {
+            name: "Others2",
+            data: [25, 225, 29, 214, 214, 232, 221, 25, 212, 225, 25, 255, 29, 214, 214, 232, 21, 65]
+        }, {
+            name: "Others3",
+            data: [25, 225, 29, 214, 214, 232, 221, 25, 212, 225, 25, 255, 29, 214, 214, 232, 21, 65]
+        }
+        
+        ],
         chart: {
             type: "area",
-            height: 350,
+            height: 200,
             background: "transparent",
-            stacked: !0,
-            toolbar: {
-                show: !1
-            },
-            zoom: {
-                enabled: !1
-            }
+            stacked: true,
+            toolbar: { show: false },
+            zoom: { enabled:false }
         },
-        theme: {
-            mode: colors.chartTheme
-        },
+        theme: { mode: colors.chartTheme },
         xaxis: {
             type: "datetime",
             categories: ["01/01/2020 GMT", "01/02/2020 GMT", "01/03/2020 GMT", "01/04/2020 GMT", "01/05/2020 GMT", "01/06/2020 GMT", "01/07/2020 GMT", "01/08/2020 GMT", "01/09/2020 GMT", "01/10/2020 GMT", "01/11/2020 GMT", "01/12/2020 GMT", "01/13/2020 GMT", "01/14/2020 GMT", "01/15/2020 GMT", "01/16/2020 GMT", "01/17/2020 GMT", "01/18/2020 GMT"],
             labels: {
-                show: !0,
-                trim: !1,
+                show: true,
+                trim: false,
                 minHeight: void 0,
                 maxHeight: 120,
                 style: {
@@ -501,18 +507,16 @@ var areachart, areaChartOptions = {
                     fontFamily: base.defaultFontFamily
                 }
             },
-            axisBorder: {
-                show: !1
-            },
+            axisBorder : { show: false },
             tooltip: {
-                enabled: !1,
+                enabled: false,
                 offsetX: 0
             }
         },
         yaxis: {
             labels: {
-                show: !0,
-                trim: !1,
+                show: true,
+                trim: false,
                 offsetX: -10,
                 minHeight: void 0,
                 maxHeight: 120,
@@ -537,32 +541,24 @@ var areachart, areaChartOptions = {
             offsetY: 0,
             onClick: void 0,
             onDblClick: void 0,
-            showNullDataPoints: !0,
+            showNullDataPoints: true,
             hover: {
                 size: void 0,
                 sizeOffset: 3
             }
         },
         colors: chartColors,
-        dataLabels: {
-            enabled: !1
-        },
-        stroke: {
-            curve: "smooth",
-            lineCap: "round",
-            width: 0
-        },
-        fill: {
-            type: "solid"
-        },
+        dataLabels: { enabled: false },
+        stroke: { curve: "smooth" , lineCap: "round" , width: 0 },
+        fill: { type: "solid" },
         legend: {
-            show: !1,
+            show: false ,
             position: "bottom",
             fontFamily: base.defaultFontFamily,
             fontWeight: 400,
             labels: {
                 colors: colors.mutedColor,
-                useSeriesColors: !1
+                useSeriesColors: false
             },
             markers: {
                 width: 10,
@@ -571,30 +567,23 @@ var areachart, areaChartOptions = {
                 strokeColor: "#fff",
                 radius: 6
             },
-            itemMargin: {
-                horizontal: 10,
-                vertical: 0
-            },
-            onItemClick: {
-                toggleDataSeries: !0
-            },
-            onItemHover: {
-                highlightDataSeries: !0
-            }
+            itemMargin : { horizontal: 10 , vertical: 0 },
+            onItemClick: { toggleDataSeries: true },
+            onItemHover: { highlightDataSeries: true }
         },
         grid: {
-            show: !0,
+            show: true,
             borderColor: colors.borderColor,
             strokeDashArray: 0,
             position: "back",
             xaxis: {
                 lines: {
-                    show: !1
+                    show: false
                 }
             },
             yaxis: {
                 lines: {
-                    show: !0
+                    show: true
                 }
             },
             row: {
@@ -619,8 +608,13 @@ var areachart, areaChartOptions = {
             }
         }
     },
+    
     areachartCtn = document.querySelector("#areaChart");
-areachartCtn && (areachart = new ApexCharts(areachartCtn, areaChartOptions)).render();
+	areachartCtn && (areachart = new ApexCharts(areachartCtn, areaChartOptions)).render();
+
+	console.log('areachart',areachart);
+	console.log('areaChartOptions',areaChartOptions);
+	
 var lineChartWidget, lineChartWidgetoptions = {
         series: [{
             name: "Page views",
@@ -633,17 +627,17 @@ var lineChartWidget, lineChartWidgetoptions = {
             height: 140,
             type: "line",
             toolbar: {
-                show: !1
+                show: false
             },
             zoom: {
-                enabled: !1
+                enabled: false
             }
         },
         theme: {
             mode: colors.chartTheme
         },
         stroke: {
-            show: !0,
+            show: true,
             curve: "straight",
             lineCap: "butt",
             colors: chartColors,
@@ -651,7 +645,7 @@ var lineChartWidget, lineChartWidgetoptions = {
             dashArray: [0, 0]
         },
         dataLabels: {
-            enabled: !1
+            enabled: false
         },
         markers: {
             size: 0
@@ -660,25 +654,25 @@ var lineChartWidget, lineChartWidgetoptions = {
             type: "datetime",
             categories: ["01/01/2020 GMT", "01/02/2020 GMT", "01/03/2020 GMT", "01/04/2020 GMT", "01/05/2020 GMT", "01/06/2020 GMT", "01/07/2020 GMT", "01/08/2020 GMT", "01/09/2020 GMT", "01/10/2020 GMT", "01/11/2020 GMT", "01/12/2020 GMT", "01/13/2020 GMT", "01/14/2020 GMT", "01/15/2020 GMT", "01/16/2020 GMT", "01/17/2020 GMT", "01/18/2020 GMT"],
             labels: {
-                show: !1
+                show: false
             },
             axisBorder: {
-                show: !1
+                show: false
             },
             axisTicks: {
-                show: !1
+                show: false
             }
         },
         yaxis: {
             labels: {
-                show: !1
+                show: false
             }
         },
         legend: {
-            show: !1
+            show: false
         },
         grid: {
-            show: !1,
+            show: false,
             padding: {
                 top: 0,
                 right: 0,
@@ -707,12 +701,12 @@ var radialbarWidgetChart, radialbarWidgetOptions = {
                     background: colors.borderColor
                 },
                 dataLabels: {
-                    show: !0,
+                    show: true,
                     name: {
                         fontSize: "0.875rem",
                         fontWeight: 400,
                         offsetY: -10,
-                        show: !1,
+                        show: false,
                         color: colors.mutedColor,
                         fontFamily: base.defaultFontFamily
                     },
@@ -724,11 +718,11 @@ var radialbarWidgetChart, radialbarWidgetOptions = {
                         fontWeight: 700,
                         fontFamily: base.defaultFontFamily,
                         offsetY: 10,
-                        show: !0,
+                        show: true,
                         color: colors.headingColor
                     },
                     total: {
-                        show: !1,
+                        show: false,
                         fontSize: "0.875rem",
                         fontWeight: 400,
                         offsetY: -10,
@@ -747,7 +741,7 @@ var radialbarWidgetChart, radialbarWidgetOptions = {
                 shadeIntensity: .2,
                 gradientFromColors: [extend.primaryColorLighter],
                 gradientToColors: [base.primaryColor],
-                inverseColors: !0,
+                inverseColors: true,
                 opacityFrom: 1,
                 opacityTo: 1,
                 stops: [20, 100]
@@ -777,7 +771,7 @@ var radarChartWidget, radarChartWidgetOptions = {
             height: 180,
             type: "radar",
             toolbar: {
-                show: !1
+                show: false
             }
         },
         theme: {
@@ -796,7 +790,7 @@ var radarChartWidget, radarChartWidgetOptions = {
             }
         },
         legend: {
-            show: !1
+            show: false
         },
         stroke: {
             width: 1,
@@ -842,10 +836,10 @@ var pieChartWidget, pieChartWidgetOptions = {
             type: "donut",
             height: 160,
             zoom: {
-                enabled: !1
+                enabled: false
             },
             toolbar: {
-                show: !1
+                show: false
             }
         },
         theme: {
@@ -856,12 +850,12 @@ var pieChartWidget, pieChartWidgetOptions = {
                 donut: {
                     size: "0"
                 },
-                expandOnClick: !1
+                expandOnClick: false
             }
         },
         labels: ["Desktop", "Tablet", "Mobile"],
         dataLabels: {
-            enabled: !0,
+            enabled: true,
             style: {
                 fontSize: "10px",
                 fontFamily: base.defaultFontFamily,
@@ -869,10 +863,10 @@ var pieChartWidget, pieChartWidgetOptions = {
             }
         },
         legend: {
-            show: !1
+            show: false
         },
         stroke: {
-            show: !1,
+            show: false,
             colors: extend.primaryColorLight,
             width: 1,
             dashArray: 0
@@ -890,10 +884,10 @@ var donutChartWidget, donutChartWidgetOptions = {
             type: "donut",
             height: 180,
             zoom: {
-                enabled: !1
+                enabled: false
             },
             toolbar: {
-                show: !1
+                show: false
             }
         },
         theme: {
@@ -905,12 +899,12 @@ var donutChartWidget, donutChartWidgetOptions = {
                     size: "40%",
                     background: "transparent"
                 },
-                expandOnClick: !1
+                expandOnClick: false
             }
         },
         labels: ["Clothing", "Shoes", "Others", "Electronics", "Books"],
         dataLabels: {
-            enabled: !0,
+            enabled: true,
             style: {
                 fontSize: "10px",
                 fontFamily: base.defaultFontFamily,
@@ -918,10 +912,10 @@ var donutChartWidget, donutChartWidgetOptions = {
             }
         },
         legend: {
-            show: !1
+            show: false
         },
         stroke: {
-            show: !1,
+            show: false,
             colors: colors.borderColor,
             width: 1,
             dashArray: 0
@@ -947,23 +941,23 @@ var barChartWidget, barChartWidgetoptions = {
         chart: {
             type: "bar",
             height: 165,
-            stacked: !0,
+            stacked: true,
             zoom: {
-                enabled: !0
+                enabled: true
             },
             toolbar: {
-                show: !1
+                show: false
             }
         },
         theme: {
             mode: colors.chartTheme
         },
         dataLabels: {
-            enabled: !1
+            enabled: false
         },
         plotOptions: {
             bar: {
-                horizontal: !0,
+                horizontal: true,
                 columnWidth: "20%",
                 barHeight: "40%"
             }
@@ -971,30 +965,30 @@ var barChartWidget, barChartWidgetoptions = {
         xaxis: {
             categories: ["Monday", "Tuesday", "Wednesday", "Thusday", "Friday", "Saturday", "Sunday"],
             labels: {
-                show: !1
+                show: false
             },
             axisBorder: {
-                show: !1
+                show: false
             },
             axisTicks: {
-                show: !1
+                show: false
             }
         },
         yaxis: {
             labels: {
-                show: !1
+                show: false
             },
-            reversed: !0
+            reversed: true
         },
         legend: {
-            show: !1
+            show: false
         },
         fill: {
             opacity: 1,
             colors: chartColors
         },
         grid: {
-            show: !1,
+            show: false,
             padding: {
                 top: -15,
                 right: -15,
@@ -1020,12 +1014,12 @@ var areaChartWidget, areaChartWidgetOptions = {
         chart: {
             type: "area",
             height: 190,
-            stacked: !0,
+            stacked: true,
             toolbar: {
-                show: !1
+                show: false
             },
             zoom: {
-                enabled: !0
+                enabled: true
             }
         },
         theme: {
@@ -1035,32 +1029,32 @@ var areaChartWidget, areaChartWidgetOptions = {
             type: "datetime",
             categories: ["01/01/2020 GMT", "01/02/2020 GMT", "01/03/2020 GMT", "01/04/2020 GMT", "01/05/2020 GMT", "01/06/2020 GMT", "01/07/2020 GMT", "01/08/2020 GMT", "01/09/2020 GMT", "01/10/2020 GMT", "01/11/2020 GMT", "01/12/2020 GMT", "01/13/2020 GMT", "01/14/2020 GMT", "01/15/2020 GMT", "01/16/2020 GMT", "01/17/2020 GMT", "01/18/2020 GMT"],
             labels: {
-                show: !1
+                show: false
             },
             axisBorder: {
-                show: !1
+                show: false
             },
             axisTicks: {
-                show: !1
+                show: false
             },
-            floating: !0
+            floating: true
         },
         yaxis: {
             labels: {
-                show: !1
+                show: false
             },
             axisBorder: {
-                show: !1
+                show: false
             }
         },
         markers: {
-            show: !1,
+            show: false,
             size: 0
         },
         colors: chartColors,
         dataLabels: {
-            show: !1,
-            enabled: !1
+            show: false,
+            enabled: false
         },
         stroke: {
             curve: "smooth",
@@ -1070,10 +1064,10 @@ var areaChartWidget, areaChartWidgetOptions = {
             type: "solid"
         },
         legend: {
-            show: !1
+            show: false
         },
         grid: {
-            show: !1,
+            show: false,
             padding: {
                 top: -15,
                 right: 0,
@@ -1095,27 +1089,27 @@ var columnChartWidget, columnChartWidgetoptions = {
         chart: {
             type: "bar",
             height: 150,
-            stacked: !1,
+            stacked: false,
             columnWidth: "70%",
             toolbar: {
-                show: !1
+                show: false
             },
             zoom: {
-                enabled: !1
+                enabled: false
             }
         },
         theme: {
             mode: colors.chartTheme
         },
         dataLabels: {
-            enabled: !1
+            enabled: false
         },
         plotOptions: {
             bar: {
-                horizontal: !1,
+                horizontal: false,
                 columnWidth: "40%",
                 radius: 30,
-                enableShades: !1,
+                enableShades: false,
                 endingShape: "rounded"
             }
         },
@@ -1123,29 +1117,29 @@ var columnChartWidget, columnChartWidgetoptions = {
             type: "datetime",
             categories: ["01/01/2020 GMT", "01/02/2020 GMT", "01/03/2020 GMT", "01/04/2020 GMT", "01/05/2020 GMT", "01/06/2020 GMT", "01/07/2020 GMT", "01/08/2020 GMT", "01/09/2020 GMT", "01/10/2020 GMT", "01/11/2020 GMT", "01/12/2020 GMT", "01/13/2020 GMT"],
             labels: {
-                show: !1
+                show: false
             },
             axisTicks: {
-                show: !1
+                show: false
             },
             axisBorder: {
-                show: !1
+                show: false
             }
         },
         yaxis: {
             labels: {
-                show: !1
+                show: false
             }
         },
         legend: {
-            show: !1
+            show: false
         },
         fill: {
             opacity: 1,
             colors: chartColors
         },
         grid: {
-            show: !1,
+            show: false,
             padding: {
                 top: 0,
                 right: 0,
@@ -1167,27 +1161,27 @@ var columnChartWidget2, columnChartWidget2options = {
         chart: {
             type: "bar",
             height: 240,
-            stacked: !1,
+            stacked: false,
             columnWidth: "70%",
             toolbar: {
-                show: !1
+                show: false
             },
             zoom: {
-                enabled: !1
+                enabled: false
             }
         },
         theme: {
             mode: colors.chartTheme
         },
         dataLabels: {
-            enabled: !1
+            enabled: false
         },
         plotOptions: {
             bar: {
-                horizontal: !1,
+                horizontal: false,
                 columnWidth: "40%",
                 radius: 30,
-                enableShades: !1,
+                enableShades: false,
                 endingShape: "rounded"
             }
         },
@@ -1195,8 +1189,8 @@ var columnChartWidget2, columnChartWidget2options = {
             type: "datetime",
             categories: ["01/01/2020 GMT", "01/02/2020 GMT", "01/03/2020 GMT", "01/04/2020 GMT", "01/05/2020 GMT", "01/06/2020 GMT", "01/07/2020 GMT", "01/08/2020 GMT", "01/09/2020 GMT", "01/10/2020 GMT", "01/11/2020 GMT", "01/12/2020 GMT", "01/13/2020 GMT", "01/14/2020 GMT", "01/15/2020 GMT", "01/16/2020 GMT", "01/17/2020 GMT", "01/18/2020 GMT"],
             labels: {
-                show: !0,
-                trim: !0,
+                show: true,
+                trim: true,
                 minHeight: void 0,
                 maxHeight: 120,
                 style: {
@@ -1206,26 +1200,26 @@ var columnChartWidget2, columnChartWidget2options = {
                 }
             },
             axisTicks: {
-                show: !1
+                show: false
             },
             axisBorder: {
-                show: !1
+                show: false
             }
         },
         yaxis: {
             labels: {
-                show: !1
+                show: false
             }
         },
         legend: {
-            show: !1
+            show: false
         },
         fill: {
             opacity: 1,
             colors: [base.primaryColor, extend.primaryColorLighter]
         },
         grid: {
-            show: !1,
+            show: false,
             padding: {
                 top: 0,
                 right: 0,
@@ -1263,38 +1257,38 @@ var heatmapChartWidget, heatmapChartWidgetOptions = {
             height: 190,
             type: "heatmap",
             toolbar: {
-                show: !1
+                show: false
             }
         },
         theme: {
             mode: colors.chartTheme
         },
         dataLabels: {
-            enabled: !1
+            enabled: false
         },
         colors: chartColors,
         xaxis: {
             type: "category",
             categories: ["09:00", "09:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "01:00", "01:30", "02:00", "02:30"],
             labels: {
-                show: !1,
+                show: false,
                 maxHeight: 0
             },
             axisBorder: {
-                show: !1
+                show: false
             },
             axisTicks: {
-                show: !1
+                show: false
             }
         },
         yaxis: {
             labels: {
-                show: !1,
+                show: false,
                 maxHeight: 0
             }
         },
         grid: {
-            show: !1,
+            show: false,
             padding: {
                 top: -10,
                 right: 10,
@@ -1303,7 +1297,7 @@ var heatmapChartWidget, heatmapChartWidgetOptions = {
             }
         },
         stroke: {
-            show: !0,
+            show: true,
             colors: [colors.borderColor],
             width: 1,
             dashArray: 0
@@ -1341,22 +1335,22 @@ var heatmapchart, heatmapChartOptions = {
             height: 350,
             type: "heatmap",
             toolbar: {
-                show: !1
+                show: false
             }
         },
         theme: {
             mode: colors.chartTheme
         },
         dataLabels: {
-            enabled: !1
+            enabled: false
         },
         colors: chartColors,
         xaxis: {
             type: "category",
             categories: ["09:00", "09:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "01:00", "01:30", "02:00", "02:30", "03:00", "03:30", "04:00", "04:30"],
             labels: {
-                show: !0,
-                trim: !1,
+                show: true,
+                trim: false,
                 minHeight: void 0,
                 maxHeight: 100,
                 style: {
@@ -1367,13 +1361,13 @@ var heatmapchart, heatmapChartOptions = {
                 }
             },
             axisBorder: {
-                show: !1
+                show: false
             }
         },
         yaxis: {
             labels: {
-                show: !0,
-                trim: !1,
+                show: true,
+                trim: false,
                 offsetX: -10,
                 minHeight: void 0,
                 maxHeight: 120,
@@ -1386,18 +1380,18 @@ var heatmapchart, heatmapChartOptions = {
             }
         },
         grid: {
-            show: !0,
+            show: true,
             borderColor: colors.borderColor,
             strokeDashArray: 0,
             position: "back",
             xaxis: {
                 lines: {
-                    show: !1
+                    show: false
                 }
             },
             yaxis: {
                 lines: {
-                    show: !0
+                    show: true
                 }
             },
             row: {
@@ -1452,25 +1446,25 @@ var bubblechart, bubbleChartOptions = {
             height: 350,
             type: "bubble",
             zoom: {
-                enabled: !1
+                enabled: false
             },
             sparkline: {
-                enabled: !1
+                enabled: false
             }
         },
         theme: {
             mode: colors.chartTheme
         },
         dataLabels: {
-            enabled: !1
+            enabled: false
         },
         colors: chartColors,
         xaxis: {
             tickAmount: 12,
             type: "category",
             labels: {
-                show: !0,
-                trim: !1,
+                show: true,
+                trim: false,
                 minHeight: void 0,
                 maxHeight: 120,
                 style: {
@@ -1479,13 +1473,13 @@ var bubblechart, bubbleChartOptions = {
                 }
             },
             axisBorder: {
-                show: !1
+                show: false
             }
         },
         yaxis: {
             labels: {
-                show: !0,
-                trim: !1,
+                show: true,
+                trim: false,
                 offsetX: -10,
                 minHeight: void 0,
                 maxHeight: 120,
@@ -1501,7 +1495,7 @@ var bubblechart, bubbleChartOptions = {
             fontWeight: 400,
             labels: {
                 colors: colors.mutedColor,
-                useSeriesColors: !1
+                useSeriesColors: false
             },
             markers: {
                 width: 10,
@@ -1515,28 +1509,28 @@ var bubblechart, bubbleChartOptions = {
                 vertical: 0
             },
             onItemClick: {
-                toggleDataSeries: !0
+                toggleDataSeries: true
             },
             onItemHover: {
-                highlightDataSeries: !0
+                highlightDataSeries: true
             }
         },
         markers: {
             strokeWidth: 0
         },
         grid: {
-            show: !0,
+            show: true,
             borderColor: colors.borderColor,
             strokeDashArray: 0,
             position: "back",
             xaxis: {
                 lines: {
-                    show: !1
+                    show: false
                 }
             },
             yaxis: {
                 lines: {
-                    show: !0
+                    show: true
                 }
             },
             row: {
@@ -1563,7 +1557,7 @@ var donutchart, donutChartOptions = {
             type: "donut",
             height: 305,
             zoom: {
-                enabled: !1
+                enabled: false
             }
         },
         theme: {
@@ -1574,7 +1568,7 @@ var donutchart, donutChartOptions = {
                 donut: {
                     size: "40%"
                 },
-                expandOnClick: !1
+                expandOnClick: false
             }
         },
         labels: ["Clothing", "Shoes", "Others", "Electronics", "Books"],
@@ -1584,7 +1578,7 @@ var donutchart, donutChartOptions = {
             fontWeight: 400,
             labels: {
                 colors: colors.mutedColor,
-                useSeriesColors: !1
+                useSeriesColors: false
             },
             horizontalAlign: "left",
             fontFamily: base.defaultFontFamily,
@@ -1600,10 +1594,10 @@ var donutchart, donutChartOptions = {
                 vertical: 2
             },
             onItemClick: {
-                toggleDataSeries: !0
+                toggleDataSeries: true
             },
             onItemHover: {
-                highlightDataSeries: !0
+                highlightDataSeries: true
             }
         },
         stroke: {
@@ -1635,7 +1629,7 @@ var radarchart, radarChartOptions = {
             height: 325,
             type: "radar",
             toolbar: {
-                show: !1
+                show: false
             }
         },
         theme: {
@@ -1658,7 +1652,7 @@ var radarchart, radarChartOptions = {
             fontWeight: 400,
             labels: {
                 colors: colors.mutedColor,
-                useSeriesColors: !1
+                useSeriesColors: false
             }
         },
         stroke: {
@@ -1866,10 +1860,10 @@ var candlechart, candleChartOptions = {
             type: "candlestick",
             height: 325,
             zoom: {
-                enabled: !1
+                enabled: false
             },
             toolbar: {
-                show: !1
+                show: false
             }
         },
         theme: {
@@ -1878,8 +1872,8 @@ var candlechart, candleChartOptions = {
         xaxis: {
             type: "datetime",
             labels: {
-                show: !0,
-                trim: !1,
+                show: true,
+                trim: false,
                 minHeight: void 0,
                 maxHeight: 120,
                 style: {
@@ -1888,13 +1882,13 @@ var candlechart, candleChartOptions = {
                 }
             },
             axisBorder: {
-                show: !1
+                show: false
             }
         },
         yaxis: {
             labels: {
-                show: !0,
-                trim: !1,
+                show: true,
+                trim: false,
                 offsetX: -10,
                 minHeight: void 0,
                 maxHeight: 120,
@@ -1905,18 +1899,18 @@ var candlechart, candleChartOptions = {
             }
         },
         grid: {
-            show: !0,
+            show: true,
             borderColor: colors.borderColor,
             strokeDashArray: 0,
             position: "back",
             xaxis: {
                 lines: {
-                    show: !1
+                    show: false
                 }
             },
             yaxis: {
                 lines: {
-                    show: !0
+                    show: true
                 }
             },
             row: {
@@ -1952,12 +1946,12 @@ var radialbarChart, radialbarOptions = {
                     background: colors.borderColor
                 },
                 dataLabels: {
-                    show: !0,
+                    show: true,
                     name: {
                         fontSize: "0.875rem",
                         fontWeight: 400,
                         offsetY: -10,
-                        show: !0,
+                        show: true,
                         color: colors.mutedColor,
                         fontFamily: base.defaultFontFamily
                     },
@@ -1970,10 +1964,10 @@ var radialbarChart, radialbarOptions = {
                         fontWeight: 700,
                         fontFamily: base.defaultFontFamily,
                         offsetY: 5,
-                        show: !0
+                        show: true
                     },
                     total: {
-                        show: !0,
+                        show: true,
                         fontSize: "0.875rem",
                         fontWeight: 400,
                         offsetY: -10,
@@ -1992,7 +1986,7 @@ var radialbarChart, radialbarOptions = {
                 shadeIntensity: .2,
                 gradientFromColors: [extend.primaryColorLighter],
                 gradientToColors: [extend.primaryColorDark],
-                inverseColors: !0,
+                inverseColors: true,
                 opacityFrom: 1,
                 opacityTo: 1,
                 stops: [20, 100]
@@ -2021,7 +2015,7 @@ var multiRadialbarChart, multiRadialbarOptions = {
                         fontSize: "0.875rem",
                         fontWeight: 400,
                         offsetY: -10,
-                        show: !0,
+                        show: true,
                         color: colors.mutedColor,
                         fontFamily: base.defaultFontFamily
                     },
@@ -2030,11 +2024,11 @@ var multiRadialbarChart, multiRadialbarOptions = {
                         fontWeight: 700,
                         fontFamily: base.defaultFontFamily,
                         offsetY: 0,
-                        show: !0,
+                        show: true,
                         color: colors.headingColor
                     },
                     total: {
-                        show: !0,
+                        show: true,
                         fontSize: "0.825rem",
                         fontWeight: 400,
                         offsetY: -5,
@@ -2077,10 +2071,10 @@ var customAngleChart, customAngleOptions = {
                 },
                 dataLabels: {
                     name: {
-                        show: !1
+                        show: false
                     },
                     value: {
-                        show: !1
+                        show: false
                     }
                 }
             }
@@ -2091,10 +2085,10 @@ var customAngleChart, customAngleOptions = {
         },
         labels: ["Vimeo", "Messenger", "Facebook", "LinkedIn"],
         legend: {
-            show: !1,
-            floating: !0,
+            show: false,
+            floating: true,
             labels: {
-                useSeriesColors: !0
+                useSeriesColors: true
             },
             markers: {
                 size: 0
@@ -2118,7 +2112,7 @@ var gradientRadialChart, gradientRadialOptions = {
             height: 200,
             type: "radialBar",
             toolbar: {
-                show: !1
+                show: false
             }
         },
         plotOptions: {
@@ -2140,12 +2134,12 @@ var gradientRadialChart, gradientRadialOptions = {
                     margin: 0
                 },
                 dataLabels: {
-                    show: !0,
+                    show: true,
                     name: {
                         fontSize: "0.875rem",
                         fontWeight: 400,
                         offsetY: -10,
-                        show: !0,
+                        show: true,
                         color: colors.mutedColor,
                         fontFamily: base.defaultFontFamily
                     },
@@ -2158,10 +2152,10 @@ var gradientRadialChart, gradientRadialOptions = {
                         fontWeight: 700,
                         fontFamily: base.defaultFontFamily,
                         offsetY: 5,
-                        show: !0
+                        show: true
                     },
                     total: {
-                        show: !0,
+                        show: true,
                         fontSize: "0.875rem",
                         fontWeight: 400,
                         offsetY: -10,
@@ -2178,7 +2172,7 @@ var gradientRadialChart, gradientRadialOptions = {
                 type: "horizontal",
                 shadeIntensity: .5,
                 gradientToColors: ["#ABE5A1"],
-                inverseColors: !0,
+                inverseColors: true,
                 opacityFrom: 1,
                 opacityTo: 1,
                 stops: [0, 100]
@@ -2231,7 +2225,7 @@ var strokeRadialChart, strokeRadialOptions = {
             gradient: {
                 shade: "dark",
                 shadeIntensity: .15,
-                inverseColors: !1,
+                inverseColors: false,
                 opacityFrom: 1,
                 opacityTo: 1,
                 stops: [0, 50, 65, 91]
@@ -2251,7 +2245,7 @@ var semiRadialChart, semiRadialOptions = {
             type: "radialBar",
             offsetY: -10,
             sparkline: {
-                enabled: !0
+                enabled: true
             }
         },
         plotOptions: {
@@ -2265,7 +2259,7 @@ var semiRadialChart, semiRadialOptions = {
                 },
                 dataLabels: {
                     name: {
-                        show: !1
+                        show: false
                     },
                     value: {
                         offsetY: -2,

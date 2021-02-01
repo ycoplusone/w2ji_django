@@ -1,5 +1,6 @@
 from django.urls import path 
 from . import views
+from . import jsons
 
 app_name = 'w2ji_tinydash'
 urlpatterns = [    
@@ -75,7 +76,9 @@ urlpatterns = [
     path('test-index/'                    , views.test_index.as_view()   ) ,
     path('test-master/'                    , views.test_master.as_view()   ) ,
     
-    
+    path('json-chart/' , jsons.chartjson ) ,
+    path('json-chart2/' , jsons.chart2json ) ,
+    path('json-chart3/' , jsons.chart3json ) ,
 
     
     

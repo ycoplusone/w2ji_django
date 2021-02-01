@@ -612,8 +612,6 @@ var areachart, areaChartOptions = {
     areachartCtn = document.querySelector("#areaChart");
 	areachartCtn && (areachart = new ApexCharts(areachartCtn, areaChartOptions)).render();
 
-	console.log('areachart',areachart);
-	console.log('areaChartOptions',areaChartOptions);
 	
 var lineChartWidget, lineChartWidgetoptions = {
         series: [{

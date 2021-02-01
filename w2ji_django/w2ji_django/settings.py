@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',          # 클라이언트 정보를 세션에서 관리하도록 하는 프레임워크
     'django.contrib.messages',          # 컨트롤러에서 발생한 정보를 뷰에서 쉽게 접근하도록 연결하는 프레임워크
     'django.contrib.staticfiles',       # HTML, CSS , JS 파일등의 정적파일들을 관리해주는 프레임워크
+
+    
     
     'test_song.apps.TestSongConfig', #테스트 객체    
     

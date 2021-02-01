@@ -79,7 +79,7 @@
 					</div>
 				</div>
 				<div class="chartbox mr-4">
-					<div id="areaChart"></div>
+					<div id="chart1"></div>
 				</div>
 				</div> <!-- .card-body -->
 				</div> <!-- .card -->
@@ -93,9 +93,23 @@
 
 </main><!-- start of 메인 -->
 
-
-
 {% endblock content %}
 
 
-{% block script1 %}{% endblock script1 %}<!-- body script space -->
+{% block script1 %}
+<script type="text/javascript">
+var  charinfo = {
+		id : 'chart1' ,
+		chart : { height : 200 , stacked : true } ,	  //차트 높이 , stack 여부
+		toolbar: { show: false , } ,			  //오른쪽 위 버튼
+		legend : { show : false , position : 'bottom' } , //범례
+		axis : { 
+			x : { column : 'dt', label : '일자'},
+			y : [{ column : 'sale', label : '매울'}, { column : 'amount', label : '수량'} , ]
+		}
+	};
+console.log('charinfo',charinfo);	
+
+fn_areachart('chart1'); // w2ji.chart.js
+</script>
+{% endblock script1 %}<!-- body script space -->
